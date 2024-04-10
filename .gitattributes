@@ -1,0 +1,58 @@
+# Git LFS (Large File Storage) - Track large binary files to avoid bloating the repo size
+*.unity binary lfs merge=unityyamlmerge
+*.prefab binary lfs merge=unityyamlmerge
+*.asset binary lfs merge=unityyamlmerge
+*.mat binary lfs merge=unityyamlmerge
+*.fbx binary lfs merge=unityyamlmerge
+*.anim binary lfs merge=unityyamlmerge
+*.png binary lfs
+*.jpg binary lfs
+*.jpeg binary lfs
+*.tga binary lfs
+*.psd binary lfs
+*.ai binary lfs
+*.mp3 binary lfs
+*.ogg binary lfs
+*.wav binary lfs
+*.mp4 binary lfs
+*.mov binary lfs
+*.json binary lfs
+
+# Custom shader files
+*.shader text
+*.compute text
+*.cginc text
+*.hlsl text
+
+# Script files
+*.cs diff=csharp
+
+# YAML merge tool for scene and prefab files
+*.unity merge=unityyamlmerge eol=lf
+*.prefab merge=unityyamlmerge eol=lf
+
+# Text scene representation
+*.unity text
+*.prefab text
+*.asset text
+*.meta text
+
+# Force text for project settings to make them mergeable
+ProjectSettings/*.asset text merge=unityyamlmerge
+ProjectSettings/*.txt text
+ProjectSettings/*.json text
+
+# Avoiding merge conflicts in library folder
+/[Ll]ibrary/ binary
+/[Tt]emp/ binary
+/[Oo]bj/ binary
+/[Bb]uild/ binary
+/[Bb]uilds/ binary
+/[Ll]ogs/ binary
+/[Uu]ser[Ss]ettings/ binary
+
+# Misc
+*.sln merge=union
+*.csproj merge=union
+*.unitypackage binary lfs
+

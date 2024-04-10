@@ -1,0 +1,14 @@
+runtime: nodejs20
+
+handlers:
+- url: /
+  static_files: build/index.html
+  upload: build/index.html
+  secure: always
+  http_headers:
+    Strict-Transport-Security: "max-age=31536000; includeSubDomains"
+- url: /
+  static_dir: build
+  secure: always
+  http_headers:
+    Strict-Transport-Security: "max-age=31536000; includeSubDomains"
