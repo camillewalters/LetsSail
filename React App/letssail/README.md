@@ -1,12 +1,20 @@
 # Instructions for React <> Unity Communications
 
+## Ingredients
+
+1. Google Cloud CLI (https://cloud.google.com/sdk/docs/install)
+1. WebGL on the Unity project (Unity Hub > Installs > right click on gear > Add Modules > WebGL Build Support > Install)
+1. npm (https://nodejs.org/en/download/)
+1. React (`npm i react`)
+1. A text editor that can edit Javascript (or Notepad, I don't judge)
+
 Adapted from https://react-unity-webgl.dev/docs/api/event-system
 
 ## Making a build for the purposes of WebGL
 
-1. Change player settings. Enable Decompression Fallback and Compression Format (right now I use GZip). I'm not really sure how this affects things. 
-1. Change Platform to Web.
-1. Build it to a folder in `src`.
+1. Change player settings (Build Settings > Player). Enable Decompression Fallback and Compression Format (right now I use GZip). I'm not really sure how this affects things. 
+1. Change Platform to Web in Build Settings.
+1. Build it to a folder in `src`. The first time, this can take up to like 20 minutes, so be patient. 
 1. Very important and easy to forget: Copy contents of Build Folder to `public/Build`. In the React script that initializes the Unity context, change URLs to match. (Don't mess with the file extensions or file path. This was non-trivial for me to figure out). 
 
 ## Sending data from React to Unity
@@ -33,7 +41,7 @@ Adapted from https://medium.com/@kroozrokh/step-by-step-guide-deploying-a-react-
 
 1. Make sure Google Cloud SDK is installed, and you have authenticated (if you haven't authenticated, run `gcloud auth login`)
 1. Navigate to React App/letssail. Make sure you have a production build by running `npm run build` if you haven't already. 
-1. Run `gcloud app deploy`. You might have to specify the project ID, which can be found under the ID column within the project dropdown (to the left of the searchbar in the Google Cloud console)
+1. Run `gcloud app deploy`. You might have to specify the project ID, which can be found under the ID column within the project dropdown (to the left of the searchbar in the Google Cloud console) by running `gcloud config set project project-name`
 1. Go to the URL from the command line output to verify that it has deployed properly. Note that this will overwrite the bucket's contents. 
 
 ---------------------------------------------------------------------------------------------------------
