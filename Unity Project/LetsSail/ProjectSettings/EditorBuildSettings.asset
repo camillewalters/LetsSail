@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SimpleCubeScene.unity
     guid: 8cf0d1a816d9fcf4786ed2002bc1738d
+  - enabled: 1
+    path: Assets/Scenes/GlowTest.unity
+    guid: 6ad4a4da6056ac54eb036037937b7546
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
