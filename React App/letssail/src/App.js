@@ -4,6 +4,13 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 function App() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
+
+        loaderUrl: '/Build/SimpleWater.loader.js',
+        dataUrl: '/Build/SimpleWater.data.unityweb',
+        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
+        codeUrl: '/Build/SimpleWater.wasm.unityweb',
+    });
+/*
         loaderUrl: '/Build/OutlineCube.loader.js',
         dataUrl: '/Build/OutlineCube.data.unityweb',
         frameworkUrl: '/Build/OutlineCube.framework.js.unityweb',
@@ -11,6 +18,7 @@ function App() {
     });
 
     /*
+
     const startRotation = () => {
         sendMessage('Cube', 'SetRotation', 1); // Start rotation
     };
@@ -33,25 +41,24 @@ function App() {
         };
     }, [addEventListener, removeEventListener, handleNewScore]);
     */
-    /*
-      return (
-        <div className="App">
 
-            <h1>Let's Sail!</h1>
-              <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
-              <div>
-                      <button onClick={startRotation}>Start Rotation</button>
-                      <button onClick={stopRotation}>Stop Rotation</button>
-              </div>
-              <div>
-                  {<p>{`You've scored ${score} points.`}</p> }
-              </div>
+      //return (
+    //    <div className="App">
 
-            </div>
+    //        <h1>Let's Sail!</h1>
+    //          <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
+    //          <div>
+    //                  <button onClick={startRotation}>Start Rotation</button>
+    //                  <button onClick={stopRotation}>Stop Rotation</button>
+    //          </div>
+    //          <div>
+    //              {<p>{`You've scored ${score} points.`}</p> }
+    //          </div>
+
+    //        </div>
 
 
-      );
-      */
+    //);
     
     
     return (
