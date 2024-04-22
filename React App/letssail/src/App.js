@@ -4,12 +4,21 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 function App() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
+
         loaderUrl: '/Build/SimpleWater.loader.js',
         dataUrl: '/Build/SimpleWater.data.unityweb',
         frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
         codeUrl: '/Build/SimpleWater.wasm.unityweb',
     });
 /*
+        loaderUrl: '/Build/OutlineCube.loader.js',
+        dataUrl: '/Build/OutlineCube.data.unityweb',
+        frameworkUrl: '/Build/OutlineCube.framework.js.unityweb',
+        codeUrl: 'Build/OutlineCube.wasm.unityweb',
+    });
+
+    /*
+
     const startRotation = () => {
         sendMessage('Cube', 'SetRotation', 1); // Start rotation
     };
@@ -32,6 +41,7 @@ function App() {
         };
     }, [addEventListener, removeEventListener, handleNewScore]);
     */
+
       //return (
     //    <div className="App">
 
@@ -49,7 +59,8 @@ function App() {
 
 
     //);
-
+    
+    
     return (
         <div className="App">
 

@@ -39,7 +39,7 @@ This is a bit more complicated. This approach uses callbacks.
 
 Adapted from https://medium.com/@kroozrokh/step-by-step-guide-deploying-a-react-app-to-google-cloud-900d5b832cc7
 
-1. Make sure Google Cloud SDK is installed, and you have authenticated (if you haven't authenticated, run `gcloud auth login`)
+1. Make sure Google Cloud SDK is [installed] (https://cloud.google.com/sdk/docs/install), and you have authenticated (if you haven't authenticated, run `gcloud auth login`). Log in using the Lets Sail credentials (linked in Slack)
 1. Navigate to React App/letssail. Make sure you have a production build by running `npm run build` if you haven't already. 
 1. Run `gcloud app deploy`. You might have to specify the project ID, which can be found under the ID column within the project dropdown (to the left of the searchbar in the Google Cloud console) by running `gcloud config set project project-name`
 1. Go to the URL from the command line output to verify that it has deployed properly. Note that this will overwrite the bucket's contents. 
