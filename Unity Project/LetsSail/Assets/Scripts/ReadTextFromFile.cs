@@ -5,18 +5,16 @@ using TMPro;
 
 public class TextFromFile : MonoBehaviour
 {
-    //public Text textUI;
     public TMP_Text textUI;
-    public string filePath; // Path to your text file
+    public string filePath;
 
-    private StreamReader reader;
     private string[] lines;
     private int currentLineIndex = 0;
 
     void Start()
     {
         // Open the text file
-        reader = new StreamReader(filePath);
+        var reader = new StreamReader(filePath);
         // Read all lines from the file
         lines = reader.ReadToEnd().Split('\n');
         // Close the reader
@@ -35,8 +33,8 @@ public class TextFromFile : MonoBehaviour
         }
         else
         {
-            // Reached the end of the file
             Debug.Log("End of file reached.");
+            //probably would do something like deactivating the text element, triggering start of the next thing, etc. 
         }
     }
 
@@ -45,4 +43,6 @@ public class TextFromFile : MonoBehaviour
         currentLineIndex++;
         DisplayCurrentLine();
     }
+
+    //TODO: add a "skip" option?
 }
