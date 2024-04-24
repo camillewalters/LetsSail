@@ -5,44 +5,52 @@ using TMPro;
 
 public class TextFromFile : MonoBehaviour
 {
-    public TMP_Text textUI;
-    public string filePath;
-
     private string[] lines;
     private int currentLineIndex = 0;
+    public int numberOfLinesInFile => lines.Length; //watch for off by 1 errors when using this
 
-    void Start()
+    private const string successMessage = "Glad that it's intact";
+    public string SuccessMessage => successMessage;
+
+
+
+    string DisplayLine(int index)
     {
-        // Open the text file
-        var reader = new StreamReader(filePath);
-        // Read all lines from the file
-        lines = reader.ReadToEnd().Split('\n');
-        // Close the reader
-        reader.Close();
-
-        // Display the first line
-        DisplayCurrentLine();
-    }
-
-    void DisplayCurrentLine()
-    {
-        if (currentLineIndex < lines.Length)
+        if (index < lines.Length)
         {
-            // Update the text UI element with the current line
-            textUI.text = lines[currentLineIndex];
+            return lines[currentLineIndex];
         }
         else
         {
-            Debug.Log("End of file reached.");
-            //probably would do something like deactivating the text element, triggering start of the next thing, etc. 
+            return null;
         }
     }
+    public bool ReadFile(string filePath)
+    {        
+        var reader = new StreamReader(filePath);
+        lines = reader.ReadToEnd().Split('\n');
+        reader.Close();
+        currentLineIndex = 0;
 
-    public void ShowNextLine()
-    {
-        currentLineIndex++;
-        DisplayCurrentLine();
+        if (lines.Length > 0) return true;
+
+        return false;
     }
 
-    //TODO: add a "skip" option?
+
+    public string GetLineByIndex(int index)
+    {
+        return DisplayLine(index);
+    }
+
+    /// <summary>
+    /// Use this with the intro type scripts
+    /// </summary>
+    /// <returns></returns>
+    public string GetNextLine()
+    {
+        var line = DisplayLine(currentLineIndex);
+        currentLineIndex++;
+        return line;
+    }
 }

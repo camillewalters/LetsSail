@@ -1,0 +1,5 @@
+Look for Bow.The front of the boat.
+Look for Stern.The back of the boat.
+Look for Port.The left side of the boat when you're facing the bow.
+Look for Starboard .The right side of the boat when you're facing the bow.
+Look for Cockpit.The area towards the stern where the crew operates the boat, managing steering, sail controls, and navigation.
