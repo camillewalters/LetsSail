@@ -6,11 +6,22 @@ public class ScriptManager : MonoBehaviour
     private string[] lines;
     private string[] hintLines;
     private int currentLineIndex = 0;
-    public int NumberOfLinesInFile => lines.Length; //watch for off by 1 errors when using this
+    public int NumberOfLinesInFile => lines.Length;
 
     private const string successMessage = "Glad that it's intact";
     public string SuccessMessage => successMessage;
 
+    public struct BoatPartStrings
+    {
+        public string Instruction;
+        public string Hint;
+
+        public BoatPartStrings(string instruction, string hint)
+        {
+            this.Instruction = instruction;
+            this.Hint = hint;
+        }
+    }
 
     string DisplayLine(int index)
     {
@@ -55,12 +66,7 @@ public class ScriptManager : MonoBehaviour
         return false;
     }
 
-    public string GetInstructionLineByIndex(int index)
-    {
-        return DisplayLine(index);
-    }
-
-    public string GetHintLineByIndex(int index)
+   string GetHintLineByIndex(int index)
     {
         if (index < hintLines.Length)
         {
@@ -72,10 +78,14 @@ public class ScriptManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Use this with the intro type scripts
-    /// </summary>
-    /// <returns></returns>
+    public BoatPartStrings GetLinesByIndex(int index)
+    {
+        
+        var strings = new BoatPartStrings(DisplayLine(index),GetHintLineByIndex(index));
+        return strings;
+
+    }
+
     public string GetNextLine()
     {
         var line = DisplayLine(currentLineIndex);
