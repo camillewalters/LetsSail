@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor.Build.Content;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     //Text box
     TMP_Text textBox;
-    //change text box type
+    Image textBackground;
 
     
     public void DisplayMessage(string message)
@@ -44,6 +45,17 @@ public class UIManager : MonoBehaviour
     public void ChangeTextBoxType()
     {
         //image.color = new color
+        //image.sprite = new sprite
+    }
+    public void CloseTextBox()
+    {
+        ClearTextBox();
+        textBackground.sprite = null;
+    }
+
+    public void SkipIntro()
+    {
+
     }
         
 
