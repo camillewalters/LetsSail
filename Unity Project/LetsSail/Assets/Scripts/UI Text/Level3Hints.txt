@@ -1,0 +1,8 @@
+Look for Mainsail. The largest sail that captures the wind's power to propel the boat. Understanding how to control this sail is key to managing the boat's speed and direction.
+Look for Jib (or Jib sail). A smaller sail found in front of the main sail. It helps with the boat's balance and speed, and managing it is crucial for efficient sailing.
+Look for Mainsheet. The line on a keelboat controlling the mainsail's angle to the wind, pivotal for optimizing sailing efficiency and direction. It is usually attached via a system of pulleys to the aft end of the boom.
+Look for Jibsheet. A rope on a keelboat that adjusts the jib's position, crucial for balancing sail power and maneuvering, especially when tacking or jibing.
+Look for Lifeline. A line that runs above a boat's decks or spars to provide something for sailors to grasp if they fall or are washed away.
+Look for Spreader. An integral component of a sailboat's rigging, playing a vital role in distributing the forces applied to the mast and stabilizing the structure of the rig.
+Look for Backstay. A critical piece of rigging on a sailboat, designed to support the mast from the stern (back) of the boat.
+Look for Shroud. A key component of the rigging system on a sailboat, consisting of one of the sets of cables or ropes that run vertically from the mast's top (or near the top) down to the sides of the vessel.

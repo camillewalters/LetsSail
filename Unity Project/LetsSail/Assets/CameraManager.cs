@@ -10,7 +10,7 @@ public class CameraManager : MonoBehaviour
     public CinemachineVirtualCamera startCamera;
     public CinemachineVirtualCamera currentCamera;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         currentCamera = startCamera;
@@ -28,8 +28,12 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        //ChangeCameraBasedOnKeyInput();
+    }
+
+    void ChangeCameraBasedOnKeyInput()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -39,13 +43,21 @@ public class CameraManager : MonoBehaviour
         {
             SwitchCamera(cameras[1]);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             SwitchCamera(cameras[2]);
         }
     }
 
-    public void SwitchCamera(CinemachineVirtualCamera newCam)
+    public void ChangeCameraPosition(int index)
+    {
+        if (index < cameras.Length)
+        {
+            SwitchCamera(cameras[index]);
+        }        
+    }
+
+    void SwitchCamera(CinemachineVirtualCamera newCam)
     {
         currentCamera = newCam;
         currentCamera.Priority = 20;
