@@ -7,6 +7,7 @@
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ship W Outline.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ship W Outline.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +92,8 @@
       <updated>1713748249152</updated>
       <workItem from="1713748251274" duration="795000" />
       <workItem from="1713750192969" duration="1692000" />
+      <workItem from="1713810460862" duration="52000" />
+      <workItem from="1713810528152" duration="1460000" />
     </task>
     <servers />
   </component>
