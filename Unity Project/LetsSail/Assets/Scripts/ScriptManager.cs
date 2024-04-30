@@ -54,7 +54,7 @@ public class ScriptManager : MonoBehaviour
         reader.Close();
 
         var hintReader = new StreamReader(hintFilePath);
-        hintLines = reader.ReadToEnd().Split("\n");
+        hintLines = hintReader.ReadToEnd().Split("\n");
         hintReader.Close();
 
         currentLineIndex = 0;
