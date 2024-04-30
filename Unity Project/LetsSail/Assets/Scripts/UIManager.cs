@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
 {
     public TMP_Text textBox;
     public GameObject chatbox;
+    public GameObject skipperChatbox;
 
     
     public void DisplayMessage(string message)
@@ -42,16 +43,24 @@ public class UIManager : MonoBehaviour
     //}
 
 
-    public void ChangeTextBoxType()
+    public void ChangeTextBoxToSkipper()
     {
-        
+        chatbox.SetActive(false);
+        skipperChatbox.SetActive(true);
     }
-    public void CloseTextBox()
+
+    public void ChangeTextBoxToNormal()
+    {
+        chatbox.SetActive(true);
+        skipperChatbox.SetActive(false);
+    }
+
+    public void CloseChatBox()
     {
         chatbox.SetActive(false);
     }
     
-    public void OpenTextBox()
+    public void OpenChatBox()
     {
         chatbox.SetActive(true);
     }
