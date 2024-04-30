@@ -4,12 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEditor.Build.Content;
 using UnityEngine.UI;
+using UnityEngine.TextCore.Text;
 
 public class UIManager : MonoBehaviour
 {
-    //Text box
     public TMP_Text textBox;
-    public RawImage textBackground;
+    public GameObject chatbox;
 
     
     public void DisplayMessage(string message)
@@ -44,13 +44,16 @@ public class UIManager : MonoBehaviour
 
     public void ChangeTextBoxType()
     {
-        //image.color = new color
-        //image.sprite = new sprite
+        
     }
     public void CloseTextBox()
     {
-        ClearTextBox();
-        textBackground.texture = null;
+        chatbox.SetActive(false);
+    }
+    
+    public void OpenTextBox()
+    {
+        chatbox.SetActive(true);
     }
 
     public void SkipIntro()
