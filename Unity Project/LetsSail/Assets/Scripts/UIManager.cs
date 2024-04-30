@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     //Text box
-    TMP_Text textBox;
-    Image textBackground;
+    public TMP_Text textBox;
+    public RawImage textBackground;
 
     
     public void DisplayMessage(string message)
@@ -50,10 +50,15 @@ public class UIManager : MonoBehaviour
     public void CloseTextBox()
     {
         ClearTextBox();
-        textBackground.sprite = null;
+        textBackground.texture = null;
     }
 
     public void SkipIntro()
+    {
+
+    }
+
+    public void Continue()
     {
 
     }
