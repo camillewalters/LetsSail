@@ -36,43 +36,77 @@ public class UIManager : MonoBehaviour
         //something like GameManager.ChangeCameraAngle(2)
     }
 
-    //gamemanager method:
+    //Priyanka: gamemanager method would be something like:
     //ChangeCameraAngle(int index)
     //{
     //    CameraManager.ChangeCameraPosition(index);
     //}
 
-
-    public void ChangeTextBoxToSkipper()
+    /// <summary>
+    /// Change from normal to skipper, or from skipper to normal
+    /// </summary>
+    public void SwitchChatBoxTypes()
     {
-        chatbox.SetActive(false);
-        skipperChatbox.SetActive(true);
+        if(chatbox.activeSelf)
+        {
+            CloseChatBox() ;
+            OpenSkipperChatBox() ;
+        }
+        else if(skipperChatbox.activeSelf)
+        {
+            CloseChatBox();
+            OpenChatBox();
+        }
     }
 
-    public void ChangeTextBoxToNormal()
-    {
-        chatbox.SetActive(true);
-        skipperChatbox.SetActive(false);
-    }
-
+    /// <summary>
+    /// Will close whichever text box is open (either the normal one or the skipper one). Make sure they have the "Chatbox" tag in the scene
+    /// </summary>
     public void CloseChatBox()
     {
-        chatbox.SetActive(false);
+        var box = GameObject.FindWithTag("Chatbox");
+        if (box != null)
+        {
+            box.SetActive(false);
+        }
     }
     
+    /// <summary>
+    /// Opens normal chat box
+    /// </summary>
     public void OpenChatBox()
     {
         chatbox.SetActive(true);
     }
 
+    /// <summary>
+    /// Opens Skipper chat box
+    /// </summary>
+    public void OpenSkipperChatBox()
+    {
+        skipperChatbox.SetActive(true) ;
+    }
+
+    /// <summary>
+    /// This will disable 1 or 0 skip buttons (make sure it has the "SkipButton" tag)
+    /// </summary>
+    public void DisableSkipButton()
+    {
+        var button = GameObject.FindWithTag("SkipButton");
+        if(button != null )
+        {
+            button.SetActive(false);
+        }
+    }
+
     public void SkipIntro()
     {
-
+        //TODO: call method in Game manager
     }
 
     public void Continue()
     {
-
+        //TODO: call method in Game Manager
     }
         
 
