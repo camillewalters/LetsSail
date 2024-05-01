@@ -15,20 +15,51 @@ public class GameManager : MonoBehaviour
     
     public ScriptManager scriptManager;
     public TextMeshPro textBox; // TODO: remove
+
+    // TODO: is this the best way to do it?
+    public List<GameObject> objectsToHighlight;
     
     private List<int> _indexList;
     private int _taskCount = 0;
     private bool _tasksComplete = false;
+    private Camera _currentCamera;
     
     private void Start()
     {
         scriptManager.ReadFile(IntroFilePath);
         
         var random = new Random();
-        _indexList = new List<int> { 0, 1, 2, 3, 4 };
+        _indexList = Enumerable.Range(0, objectsToHighlight.Count).ToList();
         _indexList = _indexList.OrderBy(x => random.Next()).ToList();
-        
+
+        string s = _indexList.Aggregate("", (current, ind) => current + ind.ToString());
+        Debug.Log($"order is: {s}");
+
         DisplayMessage();
+        
+        // TODO: Replace with Camera logic, get the current camera
+        _currentCamera = Camera.main;
+    }
+
+    private void Update()
+    {
+        // Only in Task Phase
+        if (!scriptManager.IntroComplete)
+            return;
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            var mousePosition = Input.mousePosition;
+            var ray = _currentCamera.ScreenPointToRay(mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (hit.collider.gameObject == objectsToHighlight[_indexList[_taskCount]])
+                {
+                    Debug.Log("success!!");
+                    TaskSuccessfullyCompleted();
+                }
+            }
+        }
     }
 
     // TODO: Connect temp UI setup to UI Manager
@@ -62,9 +93,15 @@ public class GameManager : MonoBehaviour
         {
             DisplayIntroLine();
             
-            // Only after Intro Phase is done read the tasks and hints 
+            // Only after Intro Phase is done
             if (scriptManager.IntroComplete)
+            {
+                // Start Task Phase
+                TaskPhase();
+        
+                // Read Tasks and Hints
                 scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+            }
             
             return;
         }
@@ -105,13 +142,30 @@ public class GameManager : MonoBehaviour
 
     public void SkipIntro()
     {
+        if (scriptManager.IntroComplete)
+            return;
+        
         // Skip reading the rest of the intro and set IntroComplete to true
         scriptManager.SkipIntro();
+        
+        // Start Task Phase
+        TaskPhase();
         
         // Read Tasks and Hints
         scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
         
         // Start displaying for Task Phase
         DisplayMessage();
+    }
+
+    private void TaskPhase()
+    {
+        // Highlight all the objects 
+        // TODO: We're supposed to skip highlighting the left and right of the boat for certain angles, figure that out 
+        foreach (var obj in objectsToHighlight)
+        {
+            obj.AddComponent<Outline>();
+            obj.AddComponent<ChangeOutline>();
+        }
     }
 }
