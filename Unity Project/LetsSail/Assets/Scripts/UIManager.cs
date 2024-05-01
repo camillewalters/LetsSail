@@ -5,12 +5,17 @@ using TMPro;
 using UnityEditor.Build.Content;
 using UnityEngine.UI;
 using UnityEngine.TextCore.Text;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
     public TMP_Text textBox;
-    public GameObject chatbox;
+    public GameObject overallChatbox;
+    public GameObject normalChatbox;
     public GameObject skipperChatbox;
+    public GameObject cameraButtons;
+    public GameObject skipIntroButton;
+    public GameObject continueButton;
 
     
     public void DisplayMessage(string message)
@@ -47,15 +52,15 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void SwitchChatBoxTypes()
     {
-        if(chatbox.activeSelf)
+        if(normalChatbox.activeSelf)
         {
-            CloseChatBox() ;
+            normalChatbox.SetActive(false);
             OpenSkipperChatBox() ;
         }
         else if(skipperChatbox.activeSelf)
         {
-            CloseChatBox();
-            OpenChatBox();
+            skipperChatbox.SetActive(false);
+            OpenNormalChatBox();
         }
     }
 
@@ -64,19 +69,17 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void CloseChatBox()
     {
-        var box = GameObject.FindWithTag("Chatbox");
-        if (box != null)
-        {
-            box.SetActive(false);
-        }
+        overallChatbox.SetActive(false);
     }
     
     /// <summary>
     /// Opens normal chat box
     /// </summary>
-    public void OpenChatBox()
+    public void OpenNormalChatBox()
     {
-        chatbox.SetActive(true);
+        overallChatbox.SetActive(true);
+        normalChatbox.SetActive(true);
+        skipperChatbox.SetActive(false);
     }
 
     /// <summary>
@@ -84,19 +87,24 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void OpenSkipperChatBox()
     {
+        overallChatbox.SetActive(true);
+        normalChatbox.SetActive(false);
         skipperChatbox.SetActive(true) ;
     }
 
-    /// <summary>
-    /// This will disable 1 or 0 skip buttons (make sure it has the "SkipButton" tag)
-    /// </summary>
-    public void DisableSkipButton()
+    public void ToggleSkipButton(bool isEnabled)
     {
-        var button = GameObject.FindWithTag("SkipButton");
-        if(button != null )
-        {
-            button.SetActive(false);
-        }
+        skipIntroButton.SetActive(isEnabled);
+    }
+
+    public void ToggleContinueButton(bool isEnabled)
+    {
+        continueButton.SetActive(isEnabled);
+    }
+
+    public void ToggleCameraButtons(bool isEnabled)
+    {
+        cameraButtons.SetActive(isEnabled);
     }
 
     public void SkipIntro()
