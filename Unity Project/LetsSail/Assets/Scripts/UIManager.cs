@@ -27,18 +27,18 @@ public class UIManager : MonoBehaviour
         textBox.text = "";
     }
 
-    public void ChangeToTopCamera()
+    public void ChangeToBirdseyeCamera()
     {
-        //something like GameManager.ChangeCameraAngle(0)
+        //something like GameManager.ChangeCameraAngle(CameraManager.BirdseyeCameraIndex)
     }
 
-    public void ChangeToRightCamera()
+    public void ChangeToStarboardCamera()
     {
-        //something like GameManager.ChangeCameraAngle(1)
+        //something like GameManager.ChangeCameraAngle(CameraManager.StarboardCameraIndex)
     }
-    public void ChangeToLeftCamera() 
+    public void ChangeToPortCamera() 
     {
-        //something like GameManager.ChangeCameraAngle(2)
+        //something like GameManager.ChangeCameraAngle(CameraManager.PortCameraIndex)
     }
 
     //Priyanka: gamemanager method would be something like:
