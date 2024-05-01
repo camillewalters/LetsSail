@@ -23,11 +23,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         scriptManager.ReadFile(IntroFilePath);
-        // scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
         
         var random = new Random();
         _indexList = new List<int> { 0, 1, 2, 3, 4 };
         _indexList = _indexList.OrderBy(x => random.Next()).ToList();
+        
+        DisplayMessage();
     }
 
     // TODO: Connect temp UI setup to UI Manager
@@ -78,14 +79,14 @@ public class GameManager : MonoBehaviour
         // Else we're in the Task Phase
         DisplayLevelLine();
     }
-    
-    public void DisplayIntroLine()
+
+    private void DisplayIntroLine()
     {
         textBox.text = scriptManager.GetNextLine();
         // Debug.Log(scriptManager.GetNextLine());
     }
-    
-    public void DisplayLevelLine()
+
+    private void DisplayLevelLine()
     {
         var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
         textBox.text = taskInfo.Instruction;
@@ -93,6 +94,11 @@ public class GameManager : MonoBehaviour
 
     public void DisplayHint()
     {
+        if (_tasksComplete)
+        {
+            return; 
+        }
+        
         var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
         textBox.text = taskInfo.Hint;
     }

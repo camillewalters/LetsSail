@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/WaterScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WaterScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714440343639</updated>
       <workItem from="1714440344884" duration="5475000" />
-      <workItem from="1714528209081" duration="2509000" />
+      <workItem from="1714528209081" duration="2787000" />
     </task>
     <servers />
   </component>
