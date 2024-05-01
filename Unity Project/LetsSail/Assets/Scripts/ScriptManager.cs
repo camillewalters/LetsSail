@@ -11,6 +11,9 @@ public class ScriptManager : MonoBehaviour
     private const string successMessage = "Glad that it's intact";
     public string SuccessMessage => successMessage;
 
+    private bool introComplete = false;
+    public bool IntroComplete => introComplete;
+
     public struct BoatPartStrings
     {
         public string Instruction;
@@ -90,6 +93,21 @@ public class ScriptManager : MonoBehaviour
     {
         var line = DisplayLine(currentLineIndex);
         currentLineIndex++;
+
+        if (line == null)
+            introComplete = true;
+        
         return line;
+    }
+
+    public void SkipIntro()
+    {
+        currentLineIndex = lines.Length;
+        introComplete = true;
+    }
+
+    public bool LinesRemaining()
+    {
+        return currentLineIndex < lines.Length;
     }
 }

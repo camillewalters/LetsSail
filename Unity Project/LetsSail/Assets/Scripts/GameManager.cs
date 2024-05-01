@@ -18,11 +18,12 @@ public class GameManager : MonoBehaviour
     
     private List<int> _indexList;
     private int _taskCount = 0;
+    private bool _tasksComplete = false;
     
     private void Start()
     {
         scriptManager.ReadFile(IntroFilePath);
-        scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+        // scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
         
         var random = new Random();
         _indexList = new List<int> { 0, 1, 2, 3, 4 };
@@ -34,15 +35,48 @@ public class GameManager : MonoBehaviour
     // Later we will call this from the UI manager
     // And also change the text in the chatbox
 
+    public void TaskSuccessfullyCompleted()
+    {
+        DisplaySuccessMessage();
+        
+        // The counter is incremented once the user successfully finds the object
+        _taskCount++;
+        
+        if (_taskCount >= _indexList.Count)
+        {
+            _taskCount = 0;
+            _tasksComplete = true;
+        }
+    }
+
+    private void DisplaySuccessMessage()
+    {
+        textBox.text = scriptManager.SuccessMessage;
+    }
+
     public void DisplayMessage()
     {
-        // if we're in intro phase
+        // If we're in Intro Phase
+        if (!scriptManager.IntroComplete)
+        {
+            DisplayIntroLine();
+            
+            // Only after Intro Phase is done read the tasks and hints 
+            if (scriptManager.IntroComplete)
+                scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+            
+            return;
+        }
+
+        // If Task Phase is completed successfully and we're at the end of the day 
+        if (_tasksComplete)
+        {
+            textBox.text = EndOfDayMessage;
+            return; 
+        }
         
-        // else if were in task phase
-        // alternate instruction and success
-        // hint button is separate
-        
-        // finally end of day phase 
+        // Else we're in the Task Phase
+        DisplayLevelLine();
     }
     
     public void DisplayIntroLine()
@@ -55,16 +89,23 @@ public class GameManager : MonoBehaviour
     {
         var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
         textBox.text = taskInfo.Instruction;
-        
-        _taskCount++;
-        if (_taskCount >= _indexList.Count)
-        {
-            _taskCount = 0;
-        }
     }
 
-    public void DisplaySuccessMessage()
+    public void DisplayHint()
     {
-        textBox.text = scriptManager.SuccessMessage;
+        var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
+        textBox.text = taskInfo.Hint;
+    }
+
+    public void SkipIntro()
+    {
+        // Skip reading the rest of the intro and set IntroComplete to true
+        scriptManager.SkipIntro();
+        
+        // Read Tasks and Hints
+        scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+        
+        // Start displaying for Task Phase
+        DisplayMessage();
     }
 }
