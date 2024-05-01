@@ -1,6 +1,8 @@
 
 import React, { useState, useCallback, useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
+import { ChakraProvider } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
 function App() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
@@ -59,15 +61,46 @@ function App() {
 
 
     //);
-    
-    
+
+
     return (
-        <div className="App">
+        <ChakraProvider>
+            <div className="App">
 
-            <h1>Let's Sail!</h1>
-            <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
+                <h1>Let's Sail!</h1>
+                <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
 
-        </div>
+            </div>
+
+        </ChakraProvider>
     );
 }
 export default App;
+
+//    // Define state to track whether the condition is met
+//    const [conditionMet, setConditionMet] = useState(false);
+
+//    // Function to handle the condition
+//    const handleCondition = () => {
+//        // Logic to determine if the condition is met
+//        // For example, checking if a certain variable is true
+//        // In this example, I'm setting it to true when the button is clicked
+//        setConditionMet(true);
+//    };
+
+//    return (
+//        <div>
+//            {/* Button to trigger the condition */}
+//            <button onClick={handleCondition}>Check Condition</button>
+
+//            {/* Conditionally render the button based on the state */}
+//            {conditionMet && (
+//                <Link to="/next-page">
+//                    <button>Go to Next Page</button>
+//                </Link>
+//            )}
+//        </div>
+//    );
+//}
+
+//export default App;
