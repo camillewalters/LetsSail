@@ -64,7 +64,6 @@ function App() {
 
 
     return (
-        <ChakraProvider>
             <div className="App">
 
                 <h1>Let's Sail!</h1>
@@ -72,7 +71,6 @@ function App() {
 
             </div>
 
-        </ChakraProvider>
     );
 }
 export default App;
