@@ -6,6 +6,8 @@
 1. WebGL on the Unity project (Unity Hub > Installs > right click on gear > Add Modules > WebGL Build Support > Install)
 1. npm (https://nodejs.org/en/download/)
 1. React (`npm i react`)
+1. Chakra UI (`npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`)
+1. React router (`npm install --save react-router-dom`)
 1. A text editor that can edit Javascript (or Notepad, I don't judge)
 
 Adapted from https://react-unity-webgl.dev/docs/api/event-system
