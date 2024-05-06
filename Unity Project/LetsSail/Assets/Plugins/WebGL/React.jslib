@@ -4,5 +4,5 @@ mergeInto(LibraryManager.library, {
   },
   LevelComplete: function(){
     window.dispatchReactUnityEvent("LevelComplete");
-  }
+  },
 });
