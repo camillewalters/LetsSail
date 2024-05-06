@@ -75,6 +75,9 @@
 //}
 //export default App;
 
+
+//---------------------------------------------------------------------------------------------------------//
+
 import { Routes, Route, Outlet, Link as ReactRouterLink } from "react-router-dom";
 import {
     Link as ChakraLink,
@@ -93,20 +96,29 @@ import {
     Grid,
     GridItem,
     extendTheme
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 import { Unity, useUnityContext } from "react-unity-webgl";
 import React, { useState, useCallback, useEffect } from "react";
+import NavBar from './Components/NavBar';
+import Hero from './Components/Hero';
+import Features from "./Components/Features";
+import Testimonials from "./Components/Testimonials";
+import Contact from "./Components/Contact";
+import Level1 from "./LevelPages/Level1";
+import Theme from "./theme";
 
 
-const theme = extendTheme({
-
-})
 export default function App() {
     return (
-        <ChakraProvider>
+        <ChakraProvider theme={Theme}>
            
         <div>
-            <h1>Let's Sail</h1>
+            <NavBar />
+            <Hero />
+            <Features />
+            <Testimonials />
+            <Contact/>
+
 
             {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
@@ -134,39 +146,6 @@ export default function App() {
 function Layout() {
     return (
         <div>
-            <Tabs position='relative' variant='unstyled'>
-                <TabList>
-                    <Tab>
-                        <ChakraLink as={ReactRouterLink} to="#about">Home</ChakraLink>
-                    </Tab>
-                    <Tab>About Us</Tab>
-                    <Tab>Problems We Solve</Tab>
-                    <Tab>LetsSail Game Levels</Tab>
-                    <Tab>Testimonials</Tab>
-                    <Tab>Contact</Tab>
-                </TabList>
-                <TabIndicator mt='-1.5px' height='2px' bg='blue.500' borderRadius='1px' />
-                <TabPanels>
-                    <TabPanel id = "home">
-                        <ChakraLink as={ReactRouterLink} to="/">Home</ChakraLink>
-                    </TabPanel>
-                    <TabPanel id = "about">
-                        <p>two!</p>
-                    </TabPanel>
-                    <TabPanel id="problems">
-                        <p>three!</p>
-                    </TabPanel>
-                    <TabPanel id="game levels">
-                        <p>four!</p>
-                    </TabPanel>
-                    <TabPanel id="testimonials">
-                        <p>five!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>six!</p>
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
             <div>
                 {/* A "layout route" is a good place to put markup you want to
                   share across all the pages on your site, like navigation. */}
@@ -262,35 +241,35 @@ function Home() {
     );
 }
 
-function Level1() {
-    const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
+//function Level1() {
+//    const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
 
-        loaderUrl: '/Build/SimpleWater.loader.js',
-        dataUrl: '/Build/SimpleWater.data.unityweb',
-        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
-        codeUrl: '/Build/SimpleWater.wasm.unityweb',
-    });
+//        loaderUrl: '/Build/SimpleWater.loader.js',
+//        dataUrl: '/Build/SimpleWater.data.unityweb',
+//        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
+//        codeUrl: '/Build/SimpleWater.wasm.unityweb',
+//    });
 
-    const [conditionMet, setConditionMet] = useState(false);
+//    const [conditionMet, setConditionMet] = useState(false);
 
-    // Function to handle the condition
-    const handleCondition = () => {
-        setConditionMet(true);//this would be changed by the unity value being sent
-    };
-    return (
-        <div>
-            {/* Button to trigger the condition */}
-            {!conditionMet && <Button colorScheme= 'yellow' onClick={handleCondition}>Check Condition</Button>}
+//    // Function to handle the condition
+//    const handleCondition = () => {
+//        setConditionMet(true);//this would be changed by the unity value being sent
+//    };
+//    return (
+//        <div>
+//            {/* Button to trigger the condition */}
+//            {!conditionMet && <Button colorScheme= 'yellow' onClick={handleCondition}>Check Condition</Button>}
 
-            {/* Conditionally render the button based on the state */}
-            {conditionMet && (
-                <ChakraLink as={ReactRouterLink} to="/level2">
-                    <Button> Go to Level 2 </Button>
-                </ChakraLink>
-            )}
-        </div>
-    );
-}
+//            {/* Conditionally render the button based on the state */}
+//            {conditionMet && (
+//                <ChakraLink as={ReactRouterLink} to="/level2">
+//                    <Button> Go to Level 2 </Button>
+//                </ChakraLink>
+//            )}
+//        </div>
+//    );
+//}
 
 function Level2() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
