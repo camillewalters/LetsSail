@@ -5,6 +5,17 @@ using TMPro;
 using UnityEngine;
 using Random = System.Random;
 
+/*
+ * Some info about terms in this script:
+ * Chat box modes:
+ *      - Normal mode: Normal blue chat box on the UI.
+ *      - Skipper mode: Yellow chat box with the skipper icon on the UI.
+ * Level Phases
+ *      - Intro Phase: Displays the Intro text for the level line by line. Uses the Skip Intro button.
+ *      - Task Phase: Meat of the level. Displays instructions, hint, handles object selection.
+ *      - End of Day Phase: End of the level. After all tasks have been completed the Skipper says 1 message.
+ */
+
 [DisallowMultipleComponent]
 public class GameManager : MonoBehaviour
 {
@@ -192,7 +203,7 @@ public class GameManager : MonoBehaviour
         // Read Tasks and Hints
         scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
                 
-        // Disable Skip Intro button since we are entering task mode
+        // Disable Skip Intro button since we are entering Task Phase
         uiManager.ToggleSkipButton(false);
                 
         // Skip to Skipper mode, because everything here on is said by the Skipper
