@@ -1,11 +1,11 @@
 
 import { Unity, useUnityContext } from "react-unity-webgl";
 import React, { useState, useCallback, useEffect } from "react";
-import { Container, VStack, Button, Link as ChakraLink } from '@chakra-ui/react';
+import { Container, VStack, Button, Link as ChakraLink, Text, Box} from '@chakra-ui/react';
 import { Link as ReactRouterLink } from "react-router-dom";
 import NavBar from '../Components/NavBar';
 
-function Level1() {
+function Level3() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener, requestFullscreen, isLoaded } = useUnityContext({
 
         loaderUrl: '/Build/SimpleWater.loader.js',
@@ -27,12 +27,13 @@ function Level1() {
             removeEventListener("LevelComplete", handleLevelComplete);
         };
     }, [addEventListener, removeEventListener, handleLevelComplete]);
-        
+
 
     // Function to handle the condition
     const handleCondition = () => {
         setLevelComplete(true);//this would be changed by the unity value being sent
     };
+
 
     return (
         <div>
@@ -44,11 +45,19 @@ function Level1() {
                     {/*Button to trigger the condition*/}
                     {/*{!levelComplete && <Button colorScheme='yellow' onClick={handleCondition}>Check Condition</Button>}*/}
 
-                     Conditionally render the button based on the state 
+                    {/*Conditionally render the button based on the state*/}
                     {levelComplete && (
-                        <ChakraLink as={ReactRouterLink} to="/level2">
-                        <Button colorScheme='yellow' size = 'lg'> Go to Level 2 </Button>
-                        </ChakraLink>
+                        <Box
+                            bg='yellow.400'
+                            p={4}
+                            rounded="lg"
+                            boxShadow="lg"
+                            textAlign="center"
+                        >
+                            <Text fontSize="xl" fontWeight="bold" mb={4}>
+                                Congratulations! You passed all 3 levels of LetsSail! Have fun sailing!
+                            </Text>
+                            </Box>
                     )}
                 </VStack>
             </Container>
@@ -58,4 +67,4 @@ function Level1() {
     );
 }
 
-export default Level1;
+export default Level3;

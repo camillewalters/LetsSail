@@ -105,6 +105,8 @@ import Features from "./Components/Features";
 import Testimonials from "./Components/Testimonials";
 import Contact from "./Components/Contact";
 import Level1 from "./LevelPages/Level1";
+import Level2 from "./LevelPages/Level2";
+import Level3 from "./LevelPages/Level3";
 import Theme from "./theme";
 
 
@@ -238,68 +240,6 @@ function Home() {
           <GridItem w='100%' h='10' bg='blue.500' />
         </Grid>
         </Stack>
-    );
-}
-
-//function Level1() {
-//    const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
-
-//        loaderUrl: '/Build/SimpleWater.loader.js',
-//        dataUrl: '/Build/SimpleWater.data.unityweb',
-//        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
-//        codeUrl: '/Build/SimpleWater.wasm.unityweb',
-//    });
-
-//    const [conditionMet, setConditionMet] = useState(false);
-
-//    // Function to handle the condition
-//    const handleCondition = () => {
-//        setConditionMet(true);//this would be changed by the unity value being sent
-//    };
-//    return (
-//        <div>
-//            {/* Button to trigger the condition */}
-//            {!conditionMet && <Button colorScheme= 'yellow' onClick={handleCondition}>Check Condition</Button>}
-
-//            {/* Conditionally render the button based on the state */}
-//            {conditionMet && (
-//                <ChakraLink as={ReactRouterLink} to="/level2">
-//                    <Button> Go to Level 2 </Button>
-//                </ChakraLink>
-//            )}
-//        </div>
-//    );
-//}
-
-function Level2() {
-    const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
-
-        loaderUrl: '/Build/SimpleWater.loader.js',
-        dataUrl: '/Build/SimpleWater.data.unityweb',
-        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
-        codeUrl: '/Build/SimpleWater.wasm.unityweb',
-    });
-    return (
-        <div>
-            <h2>Level 2</h2>
-            <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
-        </div>
-    );
-}
-
-function Level3() {
-    const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
-
-        loaderUrl: '/Build/SimpleWater.loader.js',
-        dataUrl: '/Build/SimpleWater.data.unityweb',
-        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
-        codeUrl: '/Build/SimpleWater.wasm.unityweb',
-    });
-    return (
-        <div>
-            <h2>Level 3</h2>
-            <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
-        </div>
     );
 }
 

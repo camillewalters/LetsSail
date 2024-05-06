@@ -5,7 +5,7 @@ import { Container, VStack, Button, Link as ChakraLink } from '@chakra-ui/react'
 import { Link as ReactRouterLink } from "react-router-dom";
 import NavBar from '../Components/NavBar';
 
-function Level1() {
+function Level2() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener, requestFullscreen, isLoaded } = useUnityContext({
 
         loaderUrl: '/Build/SimpleWater.loader.js',
@@ -27,7 +27,7 @@ function Level1() {
             removeEventListener("LevelComplete", handleLevelComplete);
         };
     }, [addEventListener, removeEventListener, handleLevelComplete]);
-        
+
 
     // Function to handle the condition
     const handleCondition = () => {
@@ -44,10 +44,10 @@ function Level1() {
                     {/*Button to trigger the condition*/}
                     {/*{!levelComplete && <Button colorScheme='yellow' onClick={handleCondition}>Check Condition</Button>}*/}
 
-                     Conditionally render the button based on the state 
+                    {/*Conditionally render the button based on the state*/}
                     {levelComplete && (
-                        <ChakraLink as={ReactRouterLink} to="/level2">
-                        <Button colorScheme='yellow' size = 'lg'> Go to Level 2 </Button>
+                        <ChakraLink as={ReactRouterLink} to="/level3">
+                            <Button colorScheme='yellow' size='lg'> Go to Level 2 </Button>
                         </ChakraLink>
                     )}
                 </VStack>
@@ -58,4 +58,4 @@ function Level1() {
     );
 }
 
-export default Level1;
+export default Level2;
