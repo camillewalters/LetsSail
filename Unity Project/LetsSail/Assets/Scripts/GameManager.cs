@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public ScriptManager scriptManager;
     public CameraManager cameraManager;
-    public TextMeshPro textBox; // TODO: remove
+    public TextMeshPro textBox; // TODO: remove during cleanup
     public Camera brainCamera;
 
     // TODO: is this the best way to do it?
@@ -76,11 +76,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // TODO: Connect temp UI setup to UI Manager
-    // Temporarily called from the button
-    // Later we will call this from the UI manager
-    // And also change the text in the chatbox
-
     public void TaskSuccessfullyCompleted()
     {
         DisplaySuccessMessage();
@@ -107,19 +102,13 @@ public class GameManager : MonoBehaviour
         // If we're in Intro Phase
         if (!scriptManager.IntroComplete)
         {
-            DisplayIntroLine();
+            uiManager.ToggleCameraButtons(false);
+            bool displayed = DisplayIntroLine();
             
             // Only after Intro Phase is done
-            if (scriptManager.IntroComplete)
+            if (!displayed)
             {
-                // Start Task Phase
-                TaskPhase();
-        
-                // Read Tasks and Hints
-                scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
-                
-                // Disable Skip Intro button since we are entering task mode
-                uiManager.ToggleSkipButton(false);
+                EndOfIntroPhaseTasks();
             }
             
             return;
@@ -128,21 +117,29 @@ public class GameManager : MonoBehaviour
         // If Task Phase is completed successfully and we're at the end of the day 
         if (_tasksComplete)
         {
+            uiManager.ToggleCameraButtons(false);
             // textBox.text = EndOfDayMessage;
             uiManager.DisplayMessage(EndOfDayMessage);
             return; 
         }
         
         // Else we're in the Task Phase
+        uiManager.ToggleCameraButtons(true);
         uiManager.ToggleContinueButton(false);
         DisplayLevelLine();
     }
 
-    private void DisplayIntroLine()
+    private bool DisplayIntroLine()
     {
         // textBox.text = scriptManager.GetNextLine();
-        uiManager.DisplayMessage(scriptManager.GetNextLine());
-        // Debug.Log(scriptManager.GetNextLine());
+        var line = scriptManager.GetNextLine();
+
+        // we've hit the end of intro
+        if (line == null) return false;
+        
+        uiManager.DisplayMessage(line);
+        return true;
+
     }
 
     private void DisplayLevelLine()
@@ -172,17 +169,8 @@ public class GameManager : MonoBehaviour
         // Skip reading the rest of the intro and set IntroComplete to true
         scriptManager.SkipIntro();
         
-        // Start Task Phase
-        TaskPhase();
-        
-        // Read Tasks and Hints
-        scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
-                
-        // Disable Skip Intro button since we are entering task mode
-        uiManager.ToggleSkipButton(false);
-        
-        // Start displaying for Task Phase
-        DisplayMessage();
+        // End Intro Phase
+        EndOfIntroPhaseTasks();
     }
 
     private void TaskPhase()
@@ -194,5 +182,23 @@ public class GameManager : MonoBehaviour
             obj.AddComponent<Outline>();
             obj.AddComponent<ChangeOutline>();
         }
+    }
+
+    private void EndOfIntroPhaseTasks()
+    {
+        // Start Task Phase
+        TaskPhase();
+        
+        // Read Tasks and Hints
+        scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+                
+        // Disable Skip Intro button since we are entering task mode
+        uiManager.ToggleSkipButton(false);
+                
+        // Skip to Skipper mode, because everything here on is said by the Skipper
+        uiManager.SwitchChatBoxTypes();
+        
+        // Start displaying for Task Phase
+        DisplayMessage();
     }
 }
