@@ -75,22 +75,38 @@
 //}
 //export default App;
 
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link as ReactRouterLink } from "react-router-dom";
+import {
+    Link as ChakraLink,
+    LinkProps,
+    ChakraProvider,
+    Button,
+    Stack,
+    Text,
+    Box,
+    Tabs,
+    TabList,
+    TabPanel,
+    Tab,
+    TabIndicator,
+    TabPanels,
+    Grid,
+    GridItem,
+    extendTheme
+} from '@chakra-ui/react'
 import { Unity, useUnityContext } from "react-unity-webgl";
 import React, { useState, useCallback, useEffect } from "react";
 
+
+const theme = extendTheme({
+
+})
 export default function App() {
     return (
+        <ChakraProvider>
+           
         <div>
             <h1>Let's Sail</h1>
-
-            <p>
-                This example demonstrates some of the core features of React Router
-                including nested <code>&lt;Route&gt;</code>s,{" "}
-                <code>&lt;Outlet&gt;</code>s, <code>&lt;Link&gt;</code>s, and using a
-                "*" route (aka "splat route") to render a "not found" page when someone
-                visits an unrecognized URL.
-            </p>
 
             {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
@@ -108,58 +124,141 @@ export default function App() {
                     <Route path="*" element={<NoMatch />} />
                 </Route>
             </Routes>
-        </div>
+            </div>
+
+
+        </ChakraProvider>
     );
 }
 
 function Layout() {
     return (
         <div>
-            {/* A "layout route" is a good place to put markup you want to
-          share across all the pages on your site, like navigation. */}
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/level1">Level 1</Link>
-                    </li>
-                    <li>
-                        <Link to="/level2">Level 2</Link>
-                    </li>
-                    <li>
-                        <Link to="/level3">Level 3</Link>
-                    </li>
-                    <li>
-                        <Link to="/nothing-here">Nothing Here</Link>
-                    </li>
-                </ul>
-            </nav>
-
-            <hr />
-
-            {/* An <Outlet> renders whatever child route is currently active,
-          so you can think about this <Outlet> as a placeholder for
-          the child routes we defined above. */}
-            <Outlet />
+            <Tabs position='relative' variant='unstyled'>
+                <TabList>
+                    <Tab>
+                        <ChakraLink as={ReactRouterLink} to="#about">Home</ChakraLink>
+                    </Tab>
+                    <Tab>About Us</Tab>
+                    <Tab>Problems We Solve</Tab>
+                    <Tab>LetsSail Game Levels</Tab>
+                    <Tab>Testimonials</Tab>
+                    <Tab>Contact</Tab>
+                </TabList>
+                <TabIndicator mt='-1.5px' height='2px' bg='blue.500' borderRadius='1px' />
+                <TabPanels>
+                    <TabPanel id = "home">
+                        <ChakraLink as={ReactRouterLink} to="/">Home</ChakraLink>
+                    </TabPanel>
+                    <TabPanel id = "about">
+                        <p>two!</p>
+                    </TabPanel>
+                    <TabPanel id="problems">
+                        <p>three!</p>
+                    </TabPanel>
+                    <TabPanel id="game levels">
+                        <p>four!</p>
+                    </TabPanel>
+                    <TabPanel id="testimonials">
+                        <p>five!</p>
+                    </TabPanel>
+                    <TabPanel>
+                        <p>six!</p>
+                    </TabPanel>
+                </TabPanels>
+            </Tabs>
+            <div>
+                {/* A "layout route" is a good place to put markup you want to
+                  share across all the pages on your site, like navigation. */}
+                <nav>
+                    <ul>
+                        <li>
+                            <ChakraLink as={ReactRouterLink} to="/">Home</ChakraLink>
+                        </li>
+                        <li>
+                            <ChakraLink as={ReactRouterLink} to="/level1">Level 1</ChakraLink>
+                        </li>
+                        <li>
+                            <ChakraLink as={ReactRouterLink} to="/level2">Level 2</ChakraLink>
+                        </li>
+                        <li>
+                            <ChakraLink as={ReactRouterLink} to="/level3">Level 3</ChakraLink>
+                        </li>
+                        <li>
+                            <ChakraLink as={ReactRouterLink} to="/nothing-here">Nothing Here</ChakraLink>
+                        </li>
+                    </ul>
+                </nav>
+                <hr />
+                {/* An <Outlet> renders whatever child route is currently active,
+                  so you can think about this <Outlet> as a placeholder for
+                  the child routes we defined above. */}
+                <Outlet />
+            </div>
         </div>
     );
 }
 
 function Home() {
-    const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
-
-        loaderUrl: '/Build/SimpleWater.loader.js',
-        dataUrl: '/Build/SimpleWater.data.unityweb',
-        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
-        codeUrl: '/Build/SimpleWater.wasm.unityweb',
-    });
     return (
-        <div>
-            <h2>Level 1</h2>
-            <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
-        </div>
+        <Stack
+            width="1440px"
+            height="4490px"
+            maxWidth="100%"
+            background="#FFFFFF"
+            boxShadow="0px 3px 6px 0px rgba(18, 15, 40, 0.12)"
+        >
+            <Stack width="1440px" height="818px" maxWidth="100%" background="#FFFFFF">
+                <Text
+                    fontFamily="Manrope"
+                    lineHeight="1.31"
+                    fontWeight="bold"
+                    fontSize="64px"
+                    color="#171A1F"
+                    width="620px"
+                    maxWidth="100%"
+                >
+                    Learning and reviewing sailing knowledge is fun and easy
+                </Text>
+                <Text
+                    fontFamily="Manrope"
+                    lineHeight="1.56"
+                    fontWeight="light"
+                    fontSize="18px"
+                    color="#6F7787"
+                    width="485px"
+                    maxWidth="100%"
+                >
+                    Letsail brings you the confidence on the water by our gamified learning
+                    experience. The experience works on any browser, on both desktop and
+                    mobile.
+                </Text>
+                
+                <Stack
+                    borderRadius="4px"
+                    width="115px"
+                    height="52px"
+                    background="#002B6B"
+                >
+                    <Text
+                        fontFamily="Manrope"
+                        lineHeight="1.56"
+                        fontWeight="regular"
+                        fontSize="18px"
+                        color="#FFFFFF"
+                    >
+                        Play Now
+                    </Text>
+                </Stack>
+                <Box borderRadius="4px" width="648px" height="690px" maxWidth="100%" />
+            </Stack>
+        
+        <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+          <GridItem w='100%' h='10' bg='blue.500' checkcheck/>
+          <GridItem w='100%' h='10' bg='blue.500' />
+          <GridItem w='100%' h='10' bg='blue.500' />
+        </Grid>
+        </Stack>
     );
 }
 
@@ -176,18 +275,18 @@ function Level1() {
 
     // Function to handle the condition
     const handleCondition = () => {
-        setConditionMet(true);//this would be changed by the unity value
+        setConditionMet(true);//this would be changed by the unity value being sent
     };
     return (
         <div>
             {/* Button to trigger the condition */}
-            {!conditionMet && <button onClick={handleCondition}>Check Condition</button>}
+            {!conditionMet && <Button colorScheme= 'yellow' onClick={handleCondition}>Check Condition</Button>}
 
             {/* Conditionally render the button based on the state */}
             {conditionMet && (
-                <Link to="/dashboard">
-                    <button>Go to Next Page</button>
-                </Link>
+                <ChakraLink as={ReactRouterLink} to="/level2">
+                    <Button> Go to Level 2 </Button>
+                </ChakraLink>
             )}
         </div>
     );
@@ -203,7 +302,7 @@ function Level2() {
     });
     return (
         <div>
-            <h2>Level 3</h2>
+            <h2>Level 2</h2>
             <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }} />
         </div>
     );
@@ -230,7 +329,7 @@ function NoMatch() {
         <div>
             <h2>Nothing to see here!</h2>
             <p>
-                <Link to="/">Go to the home page</Link>
+                <ChakraLink as={ReactRouterLink} to="/">Go to the home page</ChakraLink>
             </p>
         </div>
     );

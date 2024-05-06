@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+    text-align: center;
+    font-family: 'Manrope';
+    src: url('Manrope-VariableFont_wght.ttf') format('truetype');
+    font-size: 22px;
 }
 
 .App-logo {
