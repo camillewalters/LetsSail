@@ -9,6 +9,7 @@ using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
+    public GameManager gameManager;
     public TMP_Text textBox;
     public GameObject overallChatbox;
     public GameObject normalChatbox;
@@ -109,12 +110,12 @@ public class UIManager : MonoBehaviour
 
     public void SkipIntro()
     {
-        //TODO: call method in Game manager
+        gameManager.SkipIntro();
     }
 
     public void Continue()
     {
-        //TODO: call method in Game Manager
+        gameManager.DisplayMessage();
     }
         
 

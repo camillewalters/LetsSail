@@ -12,9 +12,12 @@ public class GameManager : MonoBehaviour
     private const string LevelInstructionsFilePath = "Assets/Scripts/UI Text/Level1Instructions.txt";
     private const string LevelHintsFilePath = "Assets/Scripts/UI Text/Level1Hints.txt";
     private const string EndOfDayMessage = "Thank you for the great work! This is a good stopping point for today.";
-    
+
+    public UIManager uiManager;
     public ScriptManager scriptManager;
+    public CameraManager cameraManager;
     public TextMeshPro textBox; // TODO: remove
+    public Camera brainCamera;
 
     // TODO: is this the best way to do it?
     public List<GameObject> objectsToHighlight;
@@ -22,7 +25,7 @@ public class GameManager : MonoBehaviour
     private List<int> _indexList;
     private int _taskCount = 0;
     private bool _tasksComplete = false;
-    private Camera _currentCamera;
+    private int _missCount = 0;
     
     private void Start()
     {
@@ -38,7 +41,7 @@ public class GameManager : MonoBehaviour
         DisplayMessage();
         
         // TODO: Replace with Camera logic, get the current camera
-        _currentCamera = Camera.main;
+        // _currentCamera = cameraManager.currentCamera;
     }
 
     private void Update()
@@ -50,14 +53,25 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var mousePosition = Input.mousePosition;
-            var ray = _currentCamera.ScreenPointToRay(mousePosition);
+            var ray = brainCamera.ScreenPointToRay(mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 if (hit.collider.gameObject == objectsToHighlight[_indexList[_taskCount]])
                 {
                     Debug.Log("success!!");
+                    _missCount = 0;
                     TaskSuccessfullyCompleted();
                 }
+                else
+                {
+                    _missCount++;
+                }
+            }
+
+            // If the user clicks on a wrong part at least 3 times show a hint
+            if (_missCount >= 3)
+            {
+                DisplayHint();
             }
         }
     }
@@ -83,7 +97,9 @@ public class GameManager : MonoBehaviour
 
     private void DisplaySuccessMessage()
     {
-        textBox.text = scriptManager.SuccessMessage;
+        // textBox.text = scriptManager.SuccessMessage;
+        uiManager.DisplayMessage(scriptManager.SuccessMessage);
+        uiManager.ToggleContinueButton(true);
     }
 
     public void DisplayMessage()
@@ -101,6 +117,9 @@ public class GameManager : MonoBehaviour
         
                 // Read Tasks and Hints
                 scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+                
+                // Disable Skip Intro button since we are entering task mode
+                uiManager.ToggleSkipButton(false);
             }
             
             return;
@@ -109,24 +128,28 @@ public class GameManager : MonoBehaviour
         // If Task Phase is completed successfully and we're at the end of the day 
         if (_tasksComplete)
         {
-            textBox.text = EndOfDayMessage;
+            // textBox.text = EndOfDayMessage;
+            uiManager.DisplayMessage(EndOfDayMessage);
             return; 
         }
         
         // Else we're in the Task Phase
+        uiManager.ToggleContinueButton(false);
         DisplayLevelLine();
     }
 
     private void DisplayIntroLine()
     {
-        textBox.text = scriptManager.GetNextLine();
+        // textBox.text = scriptManager.GetNextLine();
+        uiManager.DisplayMessage(scriptManager.GetNextLine());
         // Debug.Log(scriptManager.GetNextLine());
     }
 
     private void DisplayLevelLine()
     {
         var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
-        textBox.text = taskInfo.Instruction;
+        // textBox.text = taskInfo.Instruction;
+        uiManager.DisplayMessage(taskInfo.Instruction);
     }
 
     public void DisplayHint()
@@ -137,7 +160,8 @@ public class GameManager : MonoBehaviour
         }
         
         var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
-        textBox.text = taskInfo.Hint;
+        // textBox.text = taskInfo.Hint;
+        uiManager.DisplayMessage(taskInfo.Hint);
     }
 
     public void SkipIntro()
@@ -153,6 +177,9 @@ public class GameManager : MonoBehaviour
         
         // Read Tasks and Hints
         scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+                
+        // Disable Skip Intro button since we are entering task mode
+        uiManager.ToggleSkipButton(false);
         
         // Start displaying for Task Phase
         DisplayMessage();
