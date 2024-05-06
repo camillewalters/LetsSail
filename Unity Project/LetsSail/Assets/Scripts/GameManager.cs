@@ -213,3 +213,15 @@ public class GameManager : MonoBehaviour
         DisplayMessage();
     }
 }
+
+
+/*
+Priyanka's To Do's 
+- Make GameManager and ScriptManager Prefabs (maybe 1 prefab w all the managers?)
+- Handle Skipper mode in the intro lines
+- UI text size issue
+- Camera buttons integration
+- Add the actual chopped up ship
+- Port and Starboard highlight only in certain camera angles 
+- Clean this script (esp the textBox object its pissing me off)
+*/
