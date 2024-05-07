@@ -1,7 +1,7 @@
 
 import { Unity, useUnityContext } from "react-unity-webgl";
 import React, { useState, useCallback, useEffect } from "react";
-import { Container, VStack, Button, Link as ChakraLink } from '@chakra-ui/react';
+import { Container, VStack, Button, Link as ChakraLink, Flex } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from "react-router-dom";
 import NavBar from '../Components/NavBar';
 
@@ -41,19 +41,22 @@ function Level2() {
                 <VStack spacing={10} align="stretch">
                     <Unity unityProvider={unityProvider} style={{ width: (window.innerWidth * 0.8), height: (window.innerHeight * 0.8), visibility: isLoaded ? "visible" : "hidden" }} />
 
-                    {/*Button to trigger the condition*/}
-                    {/*{!levelComplete && <Button colorScheme='yellow' onClick={handleCondition}>Check Condition</Button>}*/}
+                    {/*Button to trigger the condition, this should remain commented unless you want to trigger manually*/}
+                    {/*{!levelComplete && <Button colorScheme='yellow' onClick={handleCondition}>Trigger Level Complete</Button>}*/}
 
-                    {/*Conditionally render the button based on the state*/}
-                    {levelComplete && (
-                        <ChakraLink as={ReactRouterLink} to="/level3">
-                            <Button colorScheme='yellow' size='lg'> Go to Level 2 </Button>
-                        </ChakraLink>
-                    )}
+                    <Flex justify="center">
+                        {/*Conditionally render the button based on the state */}
+                        {levelComplete && (
+                            <ChakraLink as={ReactRouterLink} to="/level2">
+                                <Button colorScheme='yellow' size='lg'> Go to Level 2 </Button>
+                            </ChakraLink>
+                        )}
+                    </Flex>
                 </VStack>
+                <ChakraLink color='textcolor.500' href='https://github.com/camillewalters/LetsSail' isExternal>
+                    Click to visit our GitHub page to learn more about the project and its credits.
+                </ChakraLink>
             </Container>
-
-
         </div>
     );
 }

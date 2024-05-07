@@ -10,6 +10,7 @@ import {
   useColorModeValue,
   SimpleGrid
 } from '@chakra-ui/react';
+import Brandon from '../Images/brandon.png';
 
 interface TestimonialAttributes {
   name: string;
@@ -22,9 +23,14 @@ interface TestimonialAttributes {
 const testimonials: TestimonialAttributes[] = [
   {
     name: 'Brandon Wang',
-    image: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400',
-        content: `I really enjoy this app! It's a great tool for beginner sailors to familiarize themselves with essential knowledge for when they are on the water. I highly recommend that any novice sailor give it a try.`
-  },
+    image: Brandon,
+    content: `I really enjoy this app! It's a great tool for beginner sailors to familiarize themselves with essential knowledge for when they are on the water. I highly recommend that any novice sailor give it a try.`
+    },
+    {
+    name: 'Another Person',
+    image: Brandon,
+    content: `I really enjoy this app! It's a great tool for beginner sailors to familiarize themselves with essential knowledge for when they are on the water. I highly recommend that any novice sailor give it a try.`
+    },
 
 ];
 

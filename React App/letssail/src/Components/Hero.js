@@ -15,6 +15,7 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import { IoMdOptions } from 'react-icons/io';
+import WomanSailing from '../Images/womanSailing.jpg';
 
 export default function Hero() {
     return (
@@ -59,9 +60,9 @@ export default function Hero() {
                             px={6}
                             colorScheme={'teal'}
                             bg={'custom.100'}
-                            _hover={{ bg: 'teal.500' }}
+                            _hover={{ bg: 'custom.300' }}
                         >
-                            <Link href='#BookAppointment'>
+                            <Link href='/level1'>
                                 Play Now
                             </Link>
                         </Button>                        
@@ -89,7 +90,7 @@ export default function Hero() {
                             w={'100%'}
                             h={'100%'}
                             src={
-                                'https://images.pexels.com/photos/8376221/pexels-photo-8376221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                                WomanSailing
                             }
                         />
                     </Box>

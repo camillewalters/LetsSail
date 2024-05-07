@@ -20,6 +20,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
+import Logo from '../Images/logo.png'
 
 export default function NavBar() {
   const { isOpen, onToggle } = useDisclosure()
@@ -48,12 +49,7 @@ export default function NavBar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('textcolor.300', 'white')}>
-            LetsSail
-          </Text>
+        <img src={Logo} alt="Logo" width="125"/>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -242,12 +238,8 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/',
   },
   {
-    label: 'About Us',
-    href: '/services',
-  },
-  {
-    label: 'Problems We Solve',
-    href: '/about',
+    label: 'The Experience',
+      href: '/#Experience',
   },
   //{
   //  label: 'Testimonials',
@@ -255,11 +247,11 @@ const NAV_ITEMS: Array<NavItem> = [
   //},
   {
     label: 'Our Team',
-    href: '/food',
+      href: '/#Team',
   },
   {
     label: 'Contact Us',
-    href: '/articles',
+      href: '/#Contact',
   },
   {
     label: 'Play Now',

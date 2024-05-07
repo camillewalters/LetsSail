@@ -29,8 +29,8 @@ import Level1 from "./LevelPages/Level1";
 import Level2 from "./LevelPages/Level2";
 import Level3 from "./LevelPages/Level3";
 import Team from "./Components/Team";
+import Experience from "./Components/GameExperience";
 import Theme from "./theme";
-
 
 export default function App() {
     return (
@@ -67,34 +67,7 @@ export default function App() {
 function Layout() {
     return (
         <div>
-            <div>
-                {/* A "layout route" is a good place to put markup you want to*/}{/*
-                */}{/*  share across all the pages on your site, like navigation. */}
-                {/*<nav>*/}
-                {/*    <ul>*/}
-                {/*        <li>*/}
-                {/*            <ChakraLink as={ReactRouterLink} to="/">Home</ChakraLink>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <ChakraLink as={ReactRouterLink} to="/level1">Level 1</ChakraLink>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <ChakraLink as={ReactRouterLink} to="/level2">Level 2</ChakraLink>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <ChakraLink as={ReactRouterLink} to="/level3">Level 3</ChakraLink>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <ChakraLink as={ReactRouterLink} to="/nothing-here">Nothing Here</ChakraLink>*/}
-                {/*        </li>*/}
-                {/*    </ul>*/}
-                {/*</nav>*/}
-                {/*<hr />*/}
-                {/* An <Outlet> renders whatever child route is currently active,
-                  so you can think about this <Outlet> as a placeholder for
-                  the child routes we defined above. */}
-                <Outlet />
-            </div>
+            <Outlet />
         </div>
     );
 }
@@ -105,9 +78,18 @@ function Home() {
             <NavBar />
             <Hero />
             <Features />
-            <Testimonials />
-            <Team />
-            <Contact />
+            <div id="Experience">
+                <Experience />
+            </div>
+            {/*<div id="Testimonials">*/}
+            {/*    */}{/*<Testimonials />*/}
+            {/*</div>*/}
+            <div id="Team">
+                <Team />
+            </div>
+            <div id="Contact">
+            <   Contact />
+            </div>
         </div>
     );
 }
