@@ -5,6 +5,10 @@ import { Container, VStack, Button, Link as ChakraLink } from '@chakra-ui/react'
 import { Link as ReactRouterLink } from "react-router-dom";
 import NavBar from '../Components/NavBar';
 
+//Example for how to use sendMessage for posterity
+//    const startRotation = () => {
+//        sendMessage('Cube', 'SetRotation', 1); // Start rotation
+//    };
 function Level1() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener, requestFullscreen, isLoaded } = useUnityContext({
 
