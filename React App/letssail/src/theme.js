@@ -10,7 +10,8 @@ const Theme = extendTheme({
         },
         textcolor: {
             100: "#171a1f",
-            200: "#6f7787"
+            200: "#6f7787",
+            300: "#565d6d"//grey
         }
     },
 })

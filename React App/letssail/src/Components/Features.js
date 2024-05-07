@@ -33,8 +33,8 @@ const features: IFeature[] = [
 ];
 
 const Features = () => {
-  const headingColor = useColorModeValue("teal.600", "teal.200");
-  const textColor = useColorModeValue("gray.500", "gray.300");
+ const headingColor = useColorModeValue("textcolor.100", "teal.200");
+ const textColor = useColorModeValue("textcolor.100", "gray.300");
   const iconColor = useColorModeValue("blue.400", "teal.400");
   const titleSize = "4xl";
   const contentSize = "md";

@@ -34,7 +34,7 @@ export default function NavBar() {
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={'solid'}
-        borderColor={useColorModeValue('white', 'teal.600')}
+        borderColor={useColorModeValue('white', 'textcolor.300')}
         align={'center'}>
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -51,8 +51,8 @@ export default function NavBar() {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('teal.600', 'white')}>
-            DoKtor
+            color={useColorModeValue('textcolor.300', 'white')}>
+            LetsSail
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -89,7 +89,7 @@ export default function NavBar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('teal.600', 'gray.200')
+    const linkColor = useColorModeValue('textcolor.300', 'gray.200')
   const linkHoverColor = useColorModeValue('teal.800', 'white')
   const popoverContentBgColor = useColorModeValue('white', 'teal.700')
 
@@ -195,7 +195,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         _hover={{
           textDecoration: 'none',
         }}>
-        <Text fontWeight={600} color={useColorModeValue('teal.600', 'white')}>
+        <Text fontWeight={600} color={useColorModeValue('textcolor.300', 'white')}>
           {label}
         </Text>
         {children && (
