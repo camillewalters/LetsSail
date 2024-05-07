@@ -249,10 +249,10 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Problems We Solve',
     href: '/about',
   },
-  {
-    label: 'Testimonials',
-    href: '/calculator',
-  },
+  //{
+  //  label: 'Testimonials',
+  //  href: '/calculator',
+  //},
   {
     label: 'Our Team',
     href: '/food',

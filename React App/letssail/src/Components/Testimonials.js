@@ -53,13 +53,13 @@ const testimonials: TestimonialAttributes[] = [
 const Testimonials = () => {
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('#eff5f1', '#252d3a');
-  const blurBgColor = useColorModeValue('green.200', 'gray.600');
+  const blurBgColor = useColorModeValue('custom.300', 'gray.600');
 
   return (
     <Container maxW="5xl" p={6}>
       <Flex justify="center" mb={8} direction="column" alignItems="center">
         <chakra.h2 fontSize="3xl" fontWeight="bold" mb={2} color="textcolor.100">
-          Patient Testimonials
+          Testimonials
         </chakra.h2>
         
       </Flex>
