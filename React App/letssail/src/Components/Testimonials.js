@@ -21,33 +21,11 @@ interface TestimonialAttributes {
 
 const testimonials: TestimonialAttributes[] = [
   {
-    name: 'Amanda Johnson',
-    position: 'Orthopedic Surgeon',
-    company: 'Bone Health Clinic',
+    name: 'Brandon Wang',
     image: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400',
-    content: `I've been practicing medicine for years, and I must say that the level of expertise and care provided at this clinic is exceptional. The team here is dedicated to improving patients' lives through effective treatments and compassionate care.`
+        content: `I really enjoy this app! It's a great tool for beginner sailors to familiarize themselves with essential knowledge for when they are on the water. I highly recommend that any novice sailor give it a try.`
   },
-  {
-    name: 'Sophia Nguyen',
-    position: 'Dermatologist',
-    company: 'SkinCare Clinic',
-    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    content: `As a dermatologist, I'm proud to be associated with this clinic. The advanced techniques and personalized treatments offered here have made a significant impact on our patients' skin health and confidence. It's truly rewarding to see the positive transformations.`
-  },
-  {
-    name: 'Michael Patel',
-    position: 'Gastroenterologist',
-    company: 'Digestive Wellness Center',
-    image: 'https://images.pexels.com/photos/2770600/pexels-photo-2770600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    content: `Patients come to us seeking relief from gastrointestinal issues, and I'm proud to be part of a team that delivers exceptional care. The comprehensive approach to diagnosis and treatment ensures that our patients receive the best possible outcomes.`
-  },
-  {
-    name: 'Emily Turner',
-    position: 'Family Physician',
-    company: 'Healthy Life Clinic',
-    image: 'https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    content: `Promoting the health and well-being of families is my passion. At this clinic, we provide comprehensive healthcare services that focus on preventive care and maintaining a healthy lifestyle. It's a privilege to be a part of our patients' wellness journeys.`
-  }
+
 ];
 
 const Testimonials = () => {

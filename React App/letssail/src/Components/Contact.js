@@ -17,7 +17,7 @@ const Contact = () => {
         Check out our work
       </Text>
       <Text fontSize="md" mb={4}>
-        {"For credits and more information, check out our Github"}
+              {"While exploring our next career opportunities, we collaborated on this project to acquire new skills and refine our existing ones. We prioritized our learning objectives while carefully considering user needs. From day one, we chose to make the project open source, and we've received substantial support from our network. Visit our GitHub page to discover more."}
       </Text>
       <Center>
         <Button

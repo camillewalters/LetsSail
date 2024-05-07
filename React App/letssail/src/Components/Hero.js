@@ -44,7 +44,7 @@ export default function Hero() {
                                 zIndex: -1,
                             }}
                         >
-                            Learning and reviewing sailing knowledge is fun and easy
+                            Discovering and revisiting sailing basics is enjoyable and simple
                         </Text>
                         <br />
                     </Heading>

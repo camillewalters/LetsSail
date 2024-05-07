@@ -28,6 +28,7 @@ import Contact from "./Components/Contact";
 import Level1 from "./LevelPages/Level1";
 import Level2 from "./LevelPages/Level2";
 import Level3 from "./LevelPages/Level3";
+import Team from "./Components/Team";
 import Theme from "./theme";
 
 
@@ -105,6 +106,7 @@ function Home() {
             <Hero />
             <Features />
             <Testimonials />
+            <Team />
             <Contact />
         </div>
     );

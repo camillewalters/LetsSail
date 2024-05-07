@@ -1,6 +1,6 @@
 # LetsSail
 
-LetsSail is React and Unity-based to teach people how to sail. This project was developed with credits to the following assets:
+LetsSail is React and Unity-based game to teach people how to sail. This project was developed with credits to the following assets:
 
 - [J-80 Sailboat](https://sketchfab.com/3d-models/j-80-sailboat-681513987f464be48add6cb69580f9c5), a 3D sailboat model
 
@@ -11,6 +11,11 @@ LetsSail is React and Unity-based to teach people how to sail. This project was 
 - [Storm-Breakers](https://github.com/Stormrider31/Storm-Breakers), a Unity package used to simulate the ocean
 
 - [Doktor](https://github.com/stackfoss/doktor), a Next.js template which provided the inspiration for the website
+
+- [Fantasy Landscape](https://assetstore.unity.com/packages/3d/environments/fantasy-landscape-103573), a Unity Asset used for landscapes
+
+- [48px Gesture Icons](https://www.figma.com/community/file/809271168141873252), a Figma design file used for our UI buttons
+
 
 We also used the following technologies (and highly recommend them!):
 
@@ -26,6 +31,12 @@ We also used the following technologies (and highly recommend them!):
 
 - For more information on the React app specifically, please refer to `React App/letssail/README.md`
 
+## The Team
+
+- Kari Wu
+- Priyanka Chandrashekar
+- Camille Walters
+
 ## Special Thanks
 
 We owe a special thanks to the following people for their expertise and insights:
@@ -35,3 +46,4 @@ We owe a special thanks to the following people for their expertise and insights
 - [Brandon Wan](https://www.linkedin.com/in/brandonwan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 - [Jessica Lee](https://www.linkedin.com/in/jessica-tc-lee/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 - [Ariel Kuo](https://www.linkedin.com/in/shih-tsui-ariel-kuo-34721393?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+- [Doug Bruvall](https://www.linkedin.com/in/doug-bruvall-8a75912a9/)
