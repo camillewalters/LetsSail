@@ -18,7 +18,7 @@ interface StatData {
 
 const statData: StatData[] = [
     {
-        label: 'Product Manager / Design & Art Enthusiast',
+        label: 'Product Manager / Designer/ 3D Artist',
         score: 'Kari Wu',
         icon: <img src={Kari} alt="Kari Headshot" />,
         link: {
@@ -38,7 +38,7 @@ const statData: StatData[] = [
         }
     },
     {
-        label: 'Unity Engineer / Fullstack Enthusiast',
+        label: 'Unity / Fullstack Engineer' ,
         score: 'Camille Walters',
         icon: <img src={Camille} alt="Camille Headshot" />,
         link: {

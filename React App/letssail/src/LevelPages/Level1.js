@@ -20,8 +20,8 @@ function Level1() {
 
     const [levelComplete, setLevelComplete] = useState(false);
 
-    const handleLevelComplete = useCallback((score) => {
-        setLevelComplete(score);
+    const handleLevelComplete = useCallback(() => {
+        setLevelComplete(true);
     }, []);
 
 
@@ -45,8 +45,8 @@ function Level1() {
                 <VStack spacing={10} align="stretch">
                     <Unity unityProvider={unityProvider} style={{ width: (window.innerWidth * 0.8), height: (window.innerHeight * 0.8), visibility: isLoaded ? "visible" : "hidden" }} />
 
-                    Button to trigger the condition, this should remain commented unless you want to trigger manually
-                    {!levelComplete && <Button colorScheme='yellow' onClick={handleCondition}>Trigger Level Complete</Button>}
+                    {/*Button to trigger the condition, this should remain commented unless you want to trigger manually*/}
+                    {/*{!levelComplete && <Button colorScheme='yellow' onClick={handleCondition}>Trigger Level Complete</Button>}*/}
 
                     <Flex justify="center">
                      {/*Conditionally render the button based on the state */}

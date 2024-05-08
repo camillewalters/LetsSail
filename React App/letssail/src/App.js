@@ -82,7 +82,7 @@ function Home() {
                 <Experience />
             </div>
             {/*<div id="Testimonials">*/}
-            {/*    */}{/*<Testimonials />*/}
+            {/*    <Testimonials />*/}
             {/*</div>*/}
             <div id="Team">
                 <Team />

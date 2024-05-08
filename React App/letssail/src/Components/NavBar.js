@@ -61,7 +61,8 @@ export default function NavBar() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>          
-          <Button
+        <Button
+            rounded={'full'}
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
@@ -243,7 +244,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   //{
   //  label: 'Testimonials',
-  //  href: '/calculator',
+  //  href: '/#Testimonials',
   //},
   {
     label: 'Our Team',
@@ -252,10 +253,6 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Contact Us',
       href: '/#Contact',
-  },
-  {
-    label: 'Play Now',
-      href: '/level1',
   },
 ];
 
