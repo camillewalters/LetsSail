@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.Build.Content;
-using UnityEngine.UI;
-using UnityEngine.TextCore.Text;
-using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
+    public GameManager gameManager;
     public TMP_Text textBox;
     public GameObject overallChatbox;
     public GameObject normalChatbox;
@@ -50,17 +45,23 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Change from normal to skipper, or from skipper to normal
     /// </summary>
-    public void SwitchChatBoxTypes()
+    public void SwitchChatBoxTypes(string type)
     {
-        if(normalChatbox.activeSelf)
+        if (type == "normal")
         {
-            normalChatbox.SetActive(false);
-            OpenSkipperChatBox() ;
-        }
-        else if(skipperChatbox.activeSelf)
-        {
+            // Switch only if in Skipper mode
+            if (!skipperChatbox.activeSelf) return;
+            
             skipperChatbox.SetActive(false);
             OpenNormalChatBox();
+        }
+        else
+        {
+            // Switch only if in Normal mode
+            if (!normalChatbox.activeSelf) return;
+            
+            normalChatbox.SetActive(false);
+            OpenSkipperChatBox() ;
         }
     }
 
@@ -109,12 +110,12 @@ public class UIManager : MonoBehaviour
 
     public void SkipIntro()
     {
-        //TODO: call method in Game manager
+        gameManager.SkipIntro();
     }
 
     public void Continue()
     {
-        //TODO: call method in Game Manager
+        gameManager.DisplayMessage();
     }
         
 

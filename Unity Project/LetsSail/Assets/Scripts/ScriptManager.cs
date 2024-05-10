@@ -1,12 +1,31 @@
 using UnityEngine;
-using System.IO;
 
 public class ScriptManager : MonoBehaviour
 {
-    private string[] lines;
-    private string[] hintLines;
+    private string[] introLines = 
+    {
+        "A storm pushed you and your team to this deserted island.",
+        "As a leader, your skipper is forming a plan.",
+        "SKIPPERThe island only has food that can last us for four days. We need to sail to another island to get more supplies before we sail back home.",
+        "SKIPPERLuckily, the hull looks fine."
+    };
+    private string[] taskLines =
+    {
+        "Can you go to the Bow and see if everything looks ok?", 
+        "Can you go to the Stern and see if everything looks ok?", 
+        "Can you go to the Port and see if everything looks ok?",
+        "Can you go to the Starboard  and see if everything looks ok?",
+        "Can you go to the Cockpit and see if everything looks ok?"
+    };
+    private string[] hintLines = 
+    {
+        "Look for Bow.The front of the boat.",
+        "Look for Stern.The back of the boat.",
+        "Look for Port.The left side of the boat when you're facing the bow.",
+        "Look for Starboard .The right side of the boat when you're facing the bow.",
+        "Look for Cockpit.The area towards the stern where the crew operates the boat, managing steering, sail controls, and navigation."
+    };
     private int currentLineIndex = 0;
-    public int NumberOfLinesInFile => lines.Length;
 
     private const string successMessage = "Glad that it's intact";
     public string SuccessMessage => successMessage;
@@ -25,73 +44,17 @@ public class ScriptManager : MonoBehaviour
             this.Hint = hint;
         }
     }
-
-    string DisplayLine(int index)
-    {
-        if (index < lines.Length)
-        {
-            return lines[index];
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    public bool ReadFile(string filePath)
-    {        
-        var reader = new StreamReader(filePath);
-        lines = reader.ReadToEnd().Split('\n');
-        reader.Close();
-        currentLineIndex = 0;
-
-        if (lines.Length > 0) return true;
-
-        return false;
-    }
-
-    public bool ReadFiles(string filePath, string hintFilePath)
-    {
-        var reader = new StreamReader(filePath);
-        lines = reader.ReadToEnd().Split('\n');
-        reader.Close();
-
-        var hintReader = new StreamReader(hintFilePath);
-        hintLines = hintReader.ReadToEnd().Split("\n");
-        hintReader.Close();
-
-        currentLineIndex = 0;
-
-        if (lines.Length > 0 && hintLines.Length == lines.Length)
-        {
-            return true;
-        }
-        return false;
-    }
-
-   string GetHintLineByIndex(int index)
-    {
-        if (index < hintLines.Length)
-        {
-            return hintLines[index];
-        }
-        else
-        {
-            return null;
-        }
-    }
-
     public BoatPartStrings GetLinesByIndex(int index)
     {
         
-        var strings = new BoatPartStrings(DisplayLine(index),GetHintLineByIndex(index));
+        var strings = new BoatPartStrings(GetTaskLineByIndex(index),GetHintLineByIndex(index));
         return strings;
 
     }
 
     public string GetNextLine()
     {
-        var line = DisplayLine(currentLineIndex);
+        var line = GetIntroLineByIndex(currentLineIndex);
         currentLineIndex++;
 
         if (line == null)
@@ -99,15 +62,32 @@ public class ScriptManager : MonoBehaviour
         
         return line;
     }
+    
+    string GetIntroLineByIndex(int index)
+    {
+        return index < introLines.Length ? introLines[index] : null;
+    }
+    
+    string GetTaskLineByIndex(int index)
+    {
+        return index < taskLines.Length ? taskLines[index] : null;
+    }
+
+    string GetHintLineByIndex(int index)
+    {
+        return index < hintLines.Length ? hintLines[index] : null;
+    }
 
     public void SkipIntro()
     {
-        currentLineIndex = lines.Length;
+        currentLineIndex = introLines.Length;
         introComplete = true;
     }
 
+    /*
     public bool LinesRemaining()
     {
         return currentLineIndex < lines.Length;
     }
+    */
 }
