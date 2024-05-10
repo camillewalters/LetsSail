@@ -24,16 +24,16 @@ public class UIManager : MonoBehaviour
 
     public void ChangeToBirdseyeCamera()
     {
-        //something like GameManager.ChangeCameraAngle(CameraManager.BirdseyeCameraIndex)
+        gameManager.ChangeCameraAngle(CameraManager.CameraIndex.Birdseye);
     }
 
     public void ChangeToStarboardCamera()
     {
-        //something like GameManager.ChangeCameraAngle(CameraManager.StarboardCameraIndex)
+        gameManager.ChangeCameraAngle(CameraManager.CameraIndex.Starboard);
     }
     public void ChangeToPortCamera() 
     {
-        //something like GameManager.ChangeCameraAngle(CameraManager.PortCameraIndex)
+        gameManager.ChangeCameraAngle(CameraManager.CameraIndex.Port);
     }
 
     //Priyanka: gamemanager method would be something like:

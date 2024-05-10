@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class ScriptManager : MonoBehaviour
 {
+    // NOTE:
+    // Intro lines that have "SKIPPER" at the beginning will trigger the Skipper chat box mode 
+    
     private string[] introLines = 
     {
-        "A storm pushed you and your team to this deserted island.",
-        "As a leader, your skipper is forming a plan.",
-        "SKIPPERThe island only has food that can last us for four days. We need to sail to another island to get more supplies before we sail back home.",
-        "SKIPPERLuckily, the hull looks fine."
+        "A storm pushed you and your team to this deserted island.3",
+        "As a leader, your skipper is forming a plan.4",
+        "SKIPPERThe island only has food that can last us for four days. We need to sail to another island to get more supplies before we sail back home.4",
+        "SKIPPERLuckily, the hull looks fine.2"
     };
     private string[] taskLines =
     {
@@ -83,11 +86,4 @@ public class ScriptManager : MonoBehaviour
         currentLineIndex = introLines.Length;
         introComplete = true;
     }
-
-    /*
-    public bool LinesRemaining()
-    {
-        return currentLineIndex < lines.Length;
-    }
-    */
 }

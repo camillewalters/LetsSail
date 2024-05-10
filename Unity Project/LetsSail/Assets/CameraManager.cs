@@ -3,11 +3,14 @@ using Cinemachine;
 
 public class CameraManager : MonoBehaviour
 {
-    public const int PortCameraIndex = 0;
-    public const int StarboardCameraIndex = 1;
-    public const int BirdseyeCameraIndex = 2;
-    public const int IntroShotCameraIndex = 3;
-    public const int SkipperCameraIndex = 4;
+    public enum CameraIndex
+    {
+        Port = 0,
+        Starboard = 1,
+        Birdseye = 2,
+        IntroShot = 3,
+        Skipper = 4
+    }
 
     public CinemachineVirtualCamera[] cameras;
 
@@ -41,23 +44,23 @@ public class CameraManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SwitchCamera(cameras[PortCameraIndex]);
+            SwitchCamera(cameras[(int) CameraIndex.Port]);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            SwitchCamera(cameras[StarboardCameraIndex]);
+            SwitchCamera(cameras[(int) CameraIndex.Starboard]);
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
-            SwitchCamera(cameras[BirdseyeCameraIndex]);
+            SwitchCamera(cameras[(int) CameraIndex.Birdseye]);
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
-            SwitchCamera(cameras[IntroShotCameraIndex]);
+            SwitchCamera(cameras[(int) CameraIndex.IntroShot]);
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            SwitchCamera(cameras[SkipperCameraIndex]);
+            SwitchCamera(cameras[(int) CameraIndex.Skipper]);
         }
     }
 
