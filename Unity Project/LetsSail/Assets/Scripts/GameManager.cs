@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        // scriptManager.ReadFile();
-        
         var random = new Random();
         _indexList = Enumerable.Range(0, objectsToHighlight.Count).ToList();
         _indexList = _indexList.OrderBy(x => random.Next()).ToList();
@@ -99,7 +97,6 @@ public class GameManager : MonoBehaviour
 
     private void DisplaySuccessMessage()
     {
-        // textBox.text = scriptManager.SuccessMessage;
         uiManager.DisplayMessage(scriptManager.SuccessMessage);
         uiManager.ToggleContinueButton(true);
     }
@@ -125,7 +122,6 @@ public class GameManager : MonoBehaviour
         if (_tasksComplete)
         {
             uiManager.ToggleCameraButtons(false);
-            // textBox.text = EndOfDayMessage;
             uiManager.DisplayMessage(EndOfDayMessage);
             return; 
         }
@@ -138,7 +134,6 @@ public class GameManager : MonoBehaviour
 
     private bool DisplayIntroLine()
     {
-        // textBox.text = scriptManager.GetNextLine();
         var line = scriptManager.GetNextLine();
 
         // we've hit the end of intro
@@ -159,7 +154,6 @@ public class GameManager : MonoBehaviour
     private void DisplayLevelLine()
     {
         var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
-        // textBox.text = taskInfo.Instruction;
         uiManager.DisplayMessage(taskInfo.Instruction);
     }
 
@@ -171,7 +165,6 @@ public class GameManager : MonoBehaviour
         }
         
         var taskInfo = scriptManager.GetLinesByIndex(_indexList[_taskCount]);
-        // textBox.text = taskInfo.Hint;
         uiManager.DisplayMessage(taskInfo.Hint);
     }
 
@@ -202,9 +195,6 @@ public class GameManager : MonoBehaviour
     {
         // Start Task Phase
         TaskPhase();
-        
-        // Read Tasks and Hints
-        // scriptManager.ReadFiles();
                 
         // Disable Skip Intro button since we are entering Task Phase
         uiManager.ToggleSkipButton(false);
