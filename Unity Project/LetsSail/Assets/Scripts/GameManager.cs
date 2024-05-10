@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -19,9 +18,6 @@ using Random = System.Random;
 [DisallowMultipleComponent]
 public class GameManager : MonoBehaviour
 {
-    private const string IntroFilePath = "Assets/Scripts/UI Text/IntroText.txt";
-    private const string LevelInstructionsFilePath = "Assets/Scripts/UI Text/Level1Instructions.txt";
-    private const string LevelHintsFilePath = "Assets/Scripts/UI Text/Level1Hints.txt";
     private const string EndOfDayMessage = "Thank you for the great work! This is a good stopping point for today.";
 
     public UIManager uiManager;
@@ -40,7 +36,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        scriptManager.ReadFile(IntroFilePath);
+        scriptManager.ReadFile();
         
         var random = new Random();
         _indexList = Enumerable.Range(0, objectsToHighlight.Count).ToList();
@@ -201,7 +197,7 @@ public class GameManager : MonoBehaviour
         TaskPhase();
         
         // Read Tasks and Hints
-        scriptManager.ReadFiles(LevelInstructionsFilePath, LevelHintsFilePath);
+        scriptManager.ReadFiles();
                 
         // Disable Skip Intro button since we are entering Task Phase
         uiManager.ToggleSkipButton(false);

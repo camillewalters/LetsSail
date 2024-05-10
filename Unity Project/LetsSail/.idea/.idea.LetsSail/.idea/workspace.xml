@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/GMPartiallyIntegrated.data.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/GMPartiallyIntegrated.data.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/GMPartiallyIntegrated.framework.js.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/GMPartiallyIntegrated.framework.js.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/GMPartiallyIntegrated.wasm.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/GMPartiallyIntegrated.wasm.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/LevelPages/Level1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/LevelPages/Level1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CameraManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GMAndCameraTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GMAndCameraTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
