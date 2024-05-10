@@ -11,6 +11,7 @@ public class ScoreController : MonoBehaviour
     public TMPro.TextMeshProUGUI tmp;
     
     private int score;
+    ReactManager reactManager;
 
 
     [DllImport("__Internal")]
