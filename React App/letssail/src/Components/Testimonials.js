@@ -10,7 +10,7 @@ import {
   useColorModeValue,
   SimpleGrid
 } from '@chakra-ui/react';
-import Brandon from '../Images/brandon.png';
+import Brandon from '../Images/Brandon.jpeg';
 
 interface TestimonialAttributes {
   name: string;

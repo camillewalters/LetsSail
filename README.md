@@ -17,6 +17,9 @@ LetsSail is React and Unity-based game to teach people how to sail. This project
 - [Doktor](https://github.com/stackfoss/doktor), a Next.js template which provided the inspiration for the website
 
 
+[See the website here](https://tidy-resolver-417620.uw.r.appspot.com/).
+
+
 We also used the following technologies (and highly recommend them!):
 
 - [Mixamo](https://www.mixamo.com/#/), to animate the humanoid model
