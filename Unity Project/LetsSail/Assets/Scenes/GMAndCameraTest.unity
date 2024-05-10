@@ -1452,9 +1452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 20202194}
   scriptManager: {fileID: 1615327501}
-  cameraManager: {fileID: 1416405482}
+  cameraManager: {fileID: 0}
   textBox: {fileID: 5190470}
-  brainCamera: {fileID: 1622538036}
+  brainCamera: {fileID: 0}
   objectsToHighlight:
   - {fileID: 1702552600}
   - {fileID: 1221794830}
