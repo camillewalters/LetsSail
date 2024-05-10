@@ -6,15 +6,16 @@
 1. WebGL on the Unity project (Unity Hub > Installs > right click on gear > Add Modules > WebGL Build Support > Install)
 1. npm (https://nodejs.org/en/download/)
 1. React (`npm i react`)
-1. Chakra UI (`npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`)
-1. React router (`npm install --save react-router-dom`)
+1. Chakra UI (`npm i @chakra-ui/react`, `npm i @chakra-ui/layout`, `npm i @chakra-ui/button`) (for development purposes, there may be other Chakra packages that I am forgetting here. Refer to the documentation to see which to install, and please keep this document up-to-date)
+1. React router (`npm i --save react-router-dom`)
+1. React Unity WebGL (`npm install react-unity-webgl`)
 1. A text editor that can edit Javascript (or Notepad, I don't judge)
 
 Adapted from https://react-unity-webgl.dev/docs/api/event-system
 
 ## Making a build for the purposes of WebGL
 
-1. Change player settings (Build Settings > Player). Enable Decompression Fallback and Compression Format (right now I use GZip). I'm not really sure how this affects things. 
+1. Change player settings (Build Settings > Player). Enable Decompression Fallback and Compression Format (right now I use GZip). 
 1. Change Platform to Web in Build Settings.
 1. Build it to a folder in `src`. The first time, this can take up to like 20 minutes, so be patient. 
 1. Very important and easy to forget: Copy contents of Build Folder to `public/Build`. In the React script that initializes the Unity context, change URLs to match. (Don't mess with the file extensions or file path. This was non-trivial for me to figure out). 
