@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        scriptManager.ReadFile();
+        // scriptManager.ReadFile();
         
         var random = new Random();
         _indexList = Enumerable.Range(0, objectsToHighlight.Count).ToList();
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         if (!scriptManager.IntroComplete)
         {
             uiManager.ToggleCameraButtons(false);
-            bool displayed = DisplayIntroLine();
+            var displayed = DisplayIntroLine();
             
             // Only after Intro Phase is done
             if (!displayed)
@@ -143,8 +143,15 @@ public class GameManager : MonoBehaviour
 
         // we've hit the end of intro
         if (line == null) return false;
+
+        if (line.StartsWith("SKIPPER"))
+        {
+            line = line.Substring(7);
+            uiManager.SwitchChatBoxTypes("skipper");
+        }
         
         uiManager.DisplayMessage(line);
+        
         return true;
 
     }
@@ -197,13 +204,13 @@ public class GameManager : MonoBehaviour
         TaskPhase();
         
         // Read Tasks and Hints
-        scriptManager.ReadFiles();
+        // scriptManager.ReadFiles();
                 
         // Disable Skip Intro button since we are entering Task Phase
         uiManager.ToggleSkipButton(false);
                 
         // Skip to Skipper mode, because everything here on is said by the Skipper
-        uiManager.SwitchChatBoxTypes();
+        uiManager.SwitchChatBoxTypes("skipper");
         
         // Start displaying for Task Phase
         DisplayMessage();

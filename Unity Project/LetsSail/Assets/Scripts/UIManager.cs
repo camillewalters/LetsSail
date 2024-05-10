@@ -45,17 +45,23 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Change from normal to skipper, or from skipper to normal
     /// </summary>
-    public void SwitchChatBoxTypes()
+    public void SwitchChatBoxTypes(string type)
     {
-        if(normalChatbox.activeSelf)
+        if (type == "normal")
         {
-            normalChatbox.SetActive(false);
-            OpenSkipperChatBox() ;
-        }
-        else if(skipperChatbox.activeSelf)
-        {
+            // Switch only if in Skipper mode
+            if (!skipperChatbox.activeSelf) return;
+            
             skipperChatbox.SetActive(false);
             OpenNormalChatBox();
+        }
+        else
+        {
+            // Switch only if in Normal mode
+            if (!normalChatbox.activeSelf) return;
+            
+            normalChatbox.SetActive(false);
+            OpenSkipperChatBox() ;
         }
     }
 

@@ -6,8 +6,8 @@ public class ScriptManager : MonoBehaviour
     {
         "A storm pushed you and your team to this deserted island.",
         "As a leader, your skipper is forming a plan.",
-        "The island only has food that can last us for four days. We need to sail to another island to get more supplies before we sail back home.",
-        "Luckily, the hull looks fine."
+        "SKIPPERThe island only has food that can last us for four days. We need to sail to another island to get more supplies before we sail back home.",
+        "SKIPPERLuckily, the hull looks fine."
     };
     private string[] taskLines =
     {
@@ -44,29 +44,6 @@ public class ScriptManager : MonoBehaviour
             this.Hint = hint;
         }
     }
-
-    // For the Intro Phase 
-    public bool ReadFile() // TODO: make void 
-    {
-        currentLineIndex = 0;
-
-        if (introLines.Length > 0) return true;
-
-        return false;
-    }
-
-    // For the Task Phase
-    public bool ReadFiles()  // TODO: make void 
-    {
-        currentLineIndex = 0;
-
-        if (taskLines.Length > 0 && hintLines.Length == taskLines.Length)
-        {
-            return true;
-        }
-        return false;
-    }
-
     public BoatPartStrings GetLinesByIndex(int index)
     {
         
@@ -88,38 +65,17 @@ public class ScriptManager : MonoBehaviour
     
     string GetIntroLineByIndex(int index)
     {
-        if (index < introLines.Length)
-        {
-            return introLines[index];
-        }
-        else
-        {
-            return null;
-        }
+        return index < introLines.Length ? introLines[index] : null;
     }
     
     string GetTaskLineByIndex(int index)
     {
-        if (index < taskLines.Length)
-        {
-            return taskLines[index];
-        }
-        else
-        {
-            return null;
-        }
+        return index < taskLines.Length ? taskLines[index] : null;
     }
 
     string GetHintLineByIndex(int index)
     {
-        if (index < hintLines.Length)
-        {
-            return hintLines[index];
-        }
-        else
-        {
-            return null;
-        }
+        return index < hintLines.Length ? hintLines[index] : null;
     }
 
     public void SkipIntro()
