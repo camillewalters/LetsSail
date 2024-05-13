@@ -42,9 +42,6 @@ public class GameManager : MonoBehaviour
         Debug.Log($"order is: {s}");
 
         DisplayMessage();
-        
-        // TODO: Replace with Camera logic, get the current camera
-        // _currentCamera = cameraManager.currentCamera;
     }
 
     private void Update()
@@ -116,11 +113,13 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        // If Task Phase is completed successfully and we're at the end of the day 
+        // If Task Phase is completed successfully and we're at the End of Day Phase
         if (_tasksComplete)
         {
             uiManager.ToggleCameraButtons(false);
             uiManager.DisplayMessage(EndOfDayMessage);
+            // TODO: Tell react manager level is complete
+            // TODO: Maybe hide continue button?
             return; 
         }
         
@@ -228,12 +227,8 @@ public class GameManager : MonoBehaviour
 
 /*
 Priyanka's To Do's 
-- Intro camera angles hard coded 
 - Make GameManager and ScriptManager Prefabs (maybe 1 prefab w all the managers?)
-- UI text size issue
-- Camera buttons integration
 - React manager integration
 - Add the actual chopped up ship
 - Port and Starboard highlight only in certain camera angles 
-- Clean this script (esp the textBox object its pissing me off)
 */
