@@ -7,7 +7,7 @@
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GMAndCameraTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GMAndCameraTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +100,7 @@
       <workItem from="1714528209081" duration="6448000" />
       <workItem from="1714953115392" duration="4701000" />
       <workItem from="1715373459444" duration="301000" />
-      <workItem from="1715620904217" duration="1916000" />
+      <workItem from="1715620904217" duration="4428000" />
     </task>
     <servers />
   </component>
