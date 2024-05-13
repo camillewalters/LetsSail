@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using Random = System.Random;
 
@@ -145,6 +144,11 @@ public class GameManager : MonoBehaviour
             
             // Update chat box to Skipper mode
             uiManager.SwitchChatBoxTypes("skipper");
+        }
+        else
+        {
+            // Update chat box to Normal mode
+            uiManager.SwitchChatBoxTypes("normal");
         }
         
         // Change camera angle

@@ -1,34 +1,19 @@
+// NOTE:
+// Change this level define before building each level
+#define LEVEL1
+
 using UnityEngine;
 
 public class ScriptManager : MonoBehaviour
 {
-    // NOTE:
-    // Intro lines that have "SKIPPER" at the beginning will trigger the Skipper chat box mode 
-    // Intro lines also end with a number corresponding to a CameraIndex
+#if LEVEL1
+    private LevelOneScript _levelScript = new LevelOneScript();
+#elif LEVEL2
+    private LevelTwoScript _levelScript = new LevelTwoScript();
+#elif LEVEL3
+    private LevelThreeScript _levelScript = new LevelThreeScript();
+#endif
     
-    private string[] introLines = 
-    {
-        "A storm pushed you and your team to this deserted island.3",
-        "As a leader, your skipper is forming a plan.4",
-        "SKIPPERThe island only has food that can last us for four days. We need to sail to another island to get more supplies before we sail back home.4",
-        "SKIPPERLuckily, the hull looks fine.2"
-    };
-    private string[] taskLines =
-    {
-        "Can you go to the Bow and see if everything looks ok?", 
-        "Can you go to the Stern and see if everything looks ok?", 
-        "Can you go to the Port and see if everything looks ok?",
-        "Can you go to the Starboard  and see if everything looks ok?",
-        "Can you go to the Cockpit and see if everything looks ok?"
-    };
-    private string[] hintLines = 
-    {
-        "Look for Bow.The front of the boat.",
-        "Look for Stern.The back of the boat.",
-        "Look for Port.The left side of the boat when you're facing the bow.",
-        "Look for Starboard .The right side of the boat when you're facing the bow.",
-        "Look for Cockpit.The area towards the stern where the crew operates the boat, managing steering, sail controls, and navigation."
-    };
     private int currentLineIndex = 0;
 
     private const string successMessage = "Glad that it's intact";
@@ -69,22 +54,22 @@ public class ScriptManager : MonoBehaviour
     
     string GetIntroLineByIndex(int index)
     {
-        return index < introLines.Length ? introLines[index] : null;
+        return index < _levelScript.introLines.Length ? _levelScript.introLines[index] : null;
     }
     
     string GetTaskLineByIndex(int index)
     {
-        return index < taskLines.Length ? taskLines[index] : null;
+        return index < _levelScript.taskLines.Length ? _levelScript.taskLines[index] : null;
     }
 
     string GetHintLineByIndex(int index)
     {
-        return index < hintLines.Length ? hintLines[index] : null;
+        return index < _levelScript.hintLines.Length ? _levelScript.hintLines[index] : null;
     }
 
     public void SkipIntro()
     {
-        currentLineIndex = introLines.Length;
+        currentLineIndex = _levelScript.introLines.Length;
         introComplete = true;
     }
 }
