@@ -4,6 +4,7 @@ public class ScriptManager : MonoBehaviour
 {
     // NOTE:
     // Intro lines that have "SKIPPER" at the beginning will trigger the Skipper chat box mode 
+    // Intro lines also end with a number corresponding to a CameraIndex
     
     private string[] introLines = 
     {
