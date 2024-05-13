@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using Random = System.Random;
 
@@ -23,7 +22,6 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public ScriptManager scriptManager;
     public CameraManager cameraManager;
-    public TextMeshPro textBox; // TODO: remove during cleanup
     public Camera brainCamera;
 
     // TODO: is this the best way to do it?
@@ -44,9 +42,6 @@ public class GameManager : MonoBehaviour
         Debug.Log($"order is: {s}");
 
         DisplayMessage();
-        
-        // TODO: Replace with Camera logic, get the current camera
-        // _currentCamera = cameraManager.currentCamera;
     }
 
     private void Update()
@@ -118,11 +113,13 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        // If Task Phase is completed successfully and we're at the end of the day 
+        // If Task Phase is completed successfully and we're at the End of Day Phase
         if (_tasksComplete)
         {
             uiManager.ToggleCameraButtons(false);
             uiManager.DisplayMessage(EndOfDayMessage);
+            // TODO: Tell react manager level is complete
+            // TODO: Maybe hide continue button?
             return; 
         }
         
@@ -141,9 +138,22 @@ public class GameManager : MonoBehaviour
 
         if (line.StartsWith("SKIPPER"))
         {
+            // Remove the "SKIPPER" section of the line
             line = line.Substring(7);
+            
+            // Update chat box to Skipper mode
             uiManager.SwitchChatBoxTypes("skipper");
         }
+        else
+        {
+            // Update chat box to Normal mode
+            uiManager.SwitchChatBoxTypes("normal");
+        }
+        
+        // Change camera angle
+        var angle = int.Parse(line[^1].ToString());
+        ChangeCameraAngle((CameraManager.CameraIndex) angle);
+        line = line.Remove(line.Length - 1);
         
         uiManager.DisplayMessage(line);
         
@@ -202,19 +212,23 @@ public class GameManager : MonoBehaviour
         // Skip to Skipper mode, because everything here on is said by the Skipper
         uiManager.SwitchChatBoxTypes("skipper");
         
+        // Switch to Bird's Eye camera angle
+        ChangeCameraAngle(CameraManager.CameraIndex.Birdseye);
+        
         // Start displaying for Task Phase
         DisplayMessage();
     }
-}
 
+    public void ChangeCameraAngle(CameraManager.CameraIndex index)
+    {
+        cameraManager.ChangeCameraPosition((int) index);
+    }
+}
 
 /*
 Priyanka's To Do's 
 - Make GameManager and ScriptManager Prefabs (maybe 1 prefab w all the managers?)
-- Handle Skipper mode in the intro lines
-- UI text size issue
-- Camera buttons integration
+- React manager integration
 - Add the actual chopped up ship
 - Port and Starboard highlight only in certain camera angles 
-- Clean this script (esp the textBox object its pissing me off)
 */
