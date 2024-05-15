@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Bobbing.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bobbing.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CubeController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CubeController.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScoreController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScoreController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelOneScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelOneScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelThreeScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelThreeScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelTwoScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelTwoScript.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +32,7 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "priyanka/camera-manager-integration",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -113,6 +98,7 @@
       <workItem from="1714953115392" duration="4701000" />
       <workItem from="1715373459444" duration="301000" />
       <workItem from="1715620904217" duration="5165000" />
+      <workItem from="1715791804281" duration="482000" />
     </task>
     <servers />
   </component>
