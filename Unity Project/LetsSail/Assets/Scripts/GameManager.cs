@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
     private int _taskCount = 0;
     private bool _tasksComplete = false;
     private int _missCount = 0;
-    private bool _taskPhase = false;
     
     private void Start()
     {
@@ -42,6 +41,9 @@ public class GameManager : MonoBehaviour
 
         string s = _indexList.Aggregate("", (current, ind) => current + ind.ToString());
         Debug.Log($"order is: {s}");
+        
+        // Set starting score message 
+        uiManager.UpdateScore("0/" + _indexList.Count.ToString());
 
         DisplayMessage();
     }
@@ -84,12 +86,13 @@ public class GameManager : MonoBehaviour
         
         // The counter is incremented once the user successfully finds the object
         _taskCount++;
+        var message = _taskCount.ToString() + "/" + _indexList.Count.ToString();
+        uiManager.UpdateScore(message);
         
         if (_taskCount >= _indexList.Count)
         {
             _taskCount = 0;
             _tasksComplete = true;
-            _taskPhase = false;
         }
     }
 
@@ -105,6 +108,7 @@ public class GameManager : MonoBehaviour
         if (!scriptManager.IntroComplete)
         {
             uiManager.ToggleCameraButtons(false);
+            uiManager.ToggleScore(false);
             var displayed = DisplayIntroLine();
             
             // Only after Intro Phase is done
@@ -120,6 +124,7 @@ public class GameManager : MonoBehaviour
         if (_tasksComplete)
         {
             uiManager.ToggleCameraButtons(false);
+            // uiManager.ToggleScore(false);
             uiManager.DisplayMessage(EndOfDayMessage);
             // TODO: Tell react manager level is complete
             uiManager.ChangeContinueButtonTextToEnd();
@@ -128,6 +133,7 @@ public class GameManager : MonoBehaviour
         
         // Else we're in the Task Phase
         uiManager.ToggleCameraButtons(true);
+        uiManager.ToggleScore(true);
         uiManager.ToggleContinueButton(false);
         DisplayLevelLine();
     }
@@ -196,7 +202,6 @@ public class GameManager : MonoBehaviour
     private void TaskPhase()
     {
         // Highlight all the objects 
-        // TODO: We're supposed to skip highlighting the left and right of the boat for certain angles, figure that out 
         foreach (var obj in objectsToHighlight)
         {
             obj.AddComponent<Outline>();
@@ -223,7 +228,6 @@ public class GameManager : MonoBehaviour
         
         // Start displaying for Task Phase
         DisplayMessage();
-        _taskPhase = true;
     }
 
     public void ChangeCameraAngle(CameraManager.CameraIndex index)
