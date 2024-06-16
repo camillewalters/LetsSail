@@ -26,11 +26,4 @@ public class ChangeOutline : MonoBehaviour
         _outline.OutlineColor = _color;
         // Destroy(outline);
     }
-
-    // TODO: Delete if we dont do that view change nonsense
-    public void ToggleOutlineForCameraView(bool toggle)
-    {
-        Debug.Log($"turning {toggle} for {gameObject.name}");
-        _outline.enabled = toggle;
-    }
 }

@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     // TODO: is this the best way to do it?
     public List<GameObject> objectsToHighlight;
-    public List<GameObject> topViewOnlyObjects; // TODO: I hate this 
     
     private List<int> _indexList;
     private int _taskCount = 0;
@@ -227,27 +226,6 @@ public class GameManager : MonoBehaviour
     public void ChangeCameraAngle(CameraManager.CameraIndex index)
     {
         cameraManager.ChangeCameraPosition((int) index);
-
-        // TODO: Delete if we dont do that view change nonsense
-        if (!_taskPhase) return;
-        if (index == CameraManager.CameraIndex.Birdseye)
-        {
-            // Enable outline on the objects w top view only
-            //Debug.Log("turning ON for: ");
-            foreach (var ob in topViewOnlyObjects)
-            {
-                ob.GetComponent<ChangeOutline>().ToggleOutlineForCameraView(true);
-            }
-        }
-        else
-        {
-            // Disable 
-            //Debug.Log("turning off for: ");
-            foreach (var ob in topViewOnlyObjects)
-            {
-                ob.GetComponent<ChangeOutline>().ToggleOutlineForCameraView(false);
-            }
-        }
     }
 }
 
@@ -257,5 +235,4 @@ Priyanka's To Do's
 - React manager integration
 - Do we want a score thing?
 - Confused animation for skipper
-- Port and Starboard highlight only in certain camera angles 
 */

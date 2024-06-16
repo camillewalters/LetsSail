@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" afterDir="false" />
@@ -80,10 +81,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/BaseRecipe/BaseRecipeTextures/WerewolfTeeth_Normal.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/BaseRecipe/BaseRecipeTextures/WerewolfTeeth_Normal.psd.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/DNA/LegacyDNA/WerewolfSerializedDNAConverterBehaviour Legacy.prefab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/DNA/LegacyDNA/WerewolfSerializedDNAConverterBehaviour Legacy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Glow Outline/ChangeOutline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Glow Outline/ChangeOutline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +187,7 @@
       <workItem from="1717915633347" duration="1116000" />
       <workItem from="1718212457358" duration="577000" />
       <workItem from="1718224702766" duration="628000" />
-      <workItem from="1718576728706" duration="53000" />
+      <workItem from="1718576728706" duration="173000" />
     </task>
     <servers />
   </component>
