@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 /*
@@ -26,11 +27,13 @@ public class GameManager : MonoBehaviour
 
     // TODO: is this the best way to do it?
     public List<GameObject> objectsToHighlight;
+    public List<GameObject> topViewOnlyObjects; // TODO: I hate this 
     
     private List<int> _indexList;
     private int _taskCount = 0;
     private bool _tasksComplete = false;
     private int _missCount = 0;
+    private bool _taskPhase = false;
     
     private void Start()
     {
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
         {
             _taskCount = 0;
             _tasksComplete = true;
+            _taskPhase = false;
         }
     }
 
@@ -119,7 +123,7 @@ public class GameManager : MonoBehaviour
             uiManager.ToggleCameraButtons(false);
             uiManager.DisplayMessage(EndOfDayMessage);
             // TODO: Tell react manager level is complete
-            // TODO: Maybe hide continue button?
+            uiManager.ChangeContinueButtonTextToEnd();
             return; 
         }
         
@@ -217,11 +221,33 @@ public class GameManager : MonoBehaviour
         
         // Start displaying for Task Phase
         DisplayMessage();
+        _taskPhase = true;
     }
 
     public void ChangeCameraAngle(CameraManager.CameraIndex index)
     {
         cameraManager.ChangeCameraPosition((int) index);
+
+        // TODO: Delete if we dont do that view change nonsense
+        if (!_taskPhase) return;
+        if (index == CameraManager.CameraIndex.Birdseye)
+        {
+            // Enable outline on the objects w top view only
+            //Debug.Log("turning ON for: ");
+            foreach (var ob in topViewOnlyObjects)
+            {
+                ob.GetComponent<ChangeOutline>().ToggleOutlineForCameraView(true);
+            }
+        }
+        else
+        {
+            // Disable 
+            //Debug.Log("turning off for: ");
+            foreach (var ob in topViewOnlyObjects)
+            {
+                ob.GetComponent<ChangeOutline>().ToggleOutlineForCameraView(false);
+            }
+        }
     }
 }
 
@@ -229,6 +255,7 @@ public class GameManager : MonoBehaviour
 Priyanka's To Do's 
 - Make GameManager and ScriptManager Prefabs (maybe 1 prefab w all the managers?)
 - React manager integration
-- Add the actual chopped up ship
+- Do we want a score thing?
+- Confused animation for skipper
 - Port and Starboard highlight only in certain camera angles 
 */

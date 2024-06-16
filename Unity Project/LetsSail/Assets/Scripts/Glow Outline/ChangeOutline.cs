@@ -11,7 +11,9 @@ public class ChangeOutline : MonoBehaviour
     private void Start()
     {
         _outline = gameObject.GetComponent<Outline>();
-        _color = _outline.OutlineColor;
+        _outline.OutlineWidth = 10;
+        _color = Color.black; // Color.grey;
+        _outline.OutlineColor = _color;
     }
 
     private void OnMouseEnter()
@@ -23,5 +25,12 @@ public class ChangeOutline : MonoBehaviour
     {
         _outline.OutlineColor = _color;
         // Destroy(outline);
+    }
+
+    // TODO: Delete if we dont do that view change nonsense
+    public void ToggleOutlineForCameraView(bool toggle)
+    {
+        Debug.Log($"turning {toggle} for {gameObject.name}");
+        _outline.enabled = toggle;
     }
 }

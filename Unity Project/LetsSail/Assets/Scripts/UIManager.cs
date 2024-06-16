@@ -117,6 +117,11 @@ public class UIManager : MonoBehaviour
     {
         gameManager.DisplayMessage();
     }
-        
+    
+    public void ChangeContinueButtonTextToEnd()
+    {
+        var buttonText = continueButton.transform.GetChild(0).gameObject;
+        buttonText.GetComponent<TMP_Text>().text = "End Level";
+    }
 
 }

@@ -17,6 +17,10 @@ public class CameraManager : MonoBehaviour
     public CinemachineVirtualCamera startCamera;
     public CinemachineVirtualCamera currentCamera;
 
+    void Awake()
+    {
+        currentCamera = startCamera;
+    }
 
     void Start()
     {
