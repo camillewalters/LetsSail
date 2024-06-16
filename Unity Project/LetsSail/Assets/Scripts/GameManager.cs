@@ -218,6 +218,9 @@ public class GameManager : MonoBehaviour
         // Switch to Bird's Eye camera angle
         ChangeCameraAngle(CameraManager.CameraIndex.Birdseye);
         
+        // Set the corresponding button to Selected Colour
+        uiManager.SelectFirstCameraButton();
+        
         // Start displaying for Task Phase
         DisplayMessage();
         _taskPhase = true;
