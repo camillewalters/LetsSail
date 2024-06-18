@@ -11,7 +11,9 @@ public class ChangeOutline : MonoBehaviour
     private void Start()
     {
         _outline = gameObject.GetComponent<Outline>();
-        _color = _outline.OutlineColor;
+        _outline.OutlineWidth = 10;
+        _color = Color.black; // Color.grey;
+        _outline.OutlineColor = _color;
     }
 
     private void OnMouseEnter()

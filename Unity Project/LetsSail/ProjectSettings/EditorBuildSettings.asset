@@ -14,8 +14,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/WaterScene.unity
     guid: b136b4af84c1fba43b8bcc54a8515627
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GMAndCameraTest.unity
     guid: 17bc34f79094e854ebf6f0bf77b87923
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: ccf8b13a838fbce46b48466193ef76c9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

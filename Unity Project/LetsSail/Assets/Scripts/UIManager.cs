@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject cameraButtons;
     public GameObject skipIntroButton;
     public GameObject continueButton;
+    public GameObject score;
 
     
     public void DisplayMessage(string message)
@@ -108,6 +110,11 @@ public class UIManager : MonoBehaviour
         cameraButtons.SetActive(isEnabled);
     }
 
+    public void ToggleScore(bool isEnabled)
+    {
+        score.SetActive(isEnabled);
+    }
+
     public void SkipIntro()
     {
         gameManager.SkipIntro();
@@ -117,6 +124,20 @@ public class UIManager : MonoBehaviour
     {
         gameManager.DisplayMessage();
     }
-        
+    
+    public void ChangeContinueButtonTextToEnd()
+    {
+        var buttonText = continueButton.transform.GetChild(0).gameObject;
+        buttonText.GetComponent<TMP_Text>().text = "End Level";
+    }
 
+    public void SelectFirstCameraButton()
+    {
+        cameraButtons.transform.GetChild(0).GetComponent<Button>().Select();
+    }
+
+    public void UpdateScore(string text)
+    {
+        score.transform.GetChild(2).GetComponent<TMP_Text>().text = text;
+    }
 }

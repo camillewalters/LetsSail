@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 /*
@@ -40,6 +41,9 @@ public class GameManager : MonoBehaviour
 
         string s = _indexList.Aggregate("", (current, ind) => current + ind.ToString());
         Debug.Log($"order is: {s}");
+        
+        // Set starting score message 
+        uiManager.UpdateScore("0/" + _indexList.Count.ToString());
 
         DisplayMessage();
     }
@@ -82,6 +86,8 @@ public class GameManager : MonoBehaviour
         
         // The counter is incremented once the user successfully finds the object
         _taskCount++;
+        var message = _taskCount.ToString() + "/" + _indexList.Count.ToString();
+        uiManager.UpdateScore(message);
         
         if (_taskCount >= _indexList.Count)
         {
@@ -102,6 +108,7 @@ public class GameManager : MonoBehaviour
         if (!scriptManager.IntroComplete)
         {
             uiManager.ToggleCameraButtons(false);
+            uiManager.ToggleScore(false);
             var displayed = DisplayIntroLine();
             
             // Only after Intro Phase is done
@@ -117,14 +124,16 @@ public class GameManager : MonoBehaviour
         if (_tasksComplete)
         {
             uiManager.ToggleCameraButtons(false);
+            // uiManager.ToggleScore(false);
             uiManager.DisplayMessage(EndOfDayMessage);
             // TODO: Tell react manager level is complete
-            // TODO: Maybe hide continue button?
+            uiManager.ChangeContinueButtonTextToEnd();
             return; 
         }
         
         // Else we're in the Task Phase
         uiManager.ToggleCameraButtons(true);
+        uiManager.ToggleScore(true);
         uiManager.ToggleContinueButton(false);
         DisplayLevelLine();
     }
@@ -193,7 +202,6 @@ public class GameManager : MonoBehaviour
     private void TaskPhase()
     {
         // Highlight all the objects 
-        // TODO: We're supposed to skip highlighting the left and right of the boat for certain angles, figure that out 
         foreach (var obj in objectsToHighlight)
         {
             obj.AddComponent<Outline>();
@@ -215,6 +223,9 @@ public class GameManager : MonoBehaviour
         // Switch to Bird's Eye camera angle
         ChangeCameraAngle(CameraManager.CameraIndex.Birdseye);
         
+        // Set the corresponding button to Selected Colour
+        uiManager.SelectFirstCameraButton();
+        
         // Start displaying for Task Phase
         DisplayMessage();
     }
@@ -229,6 +240,6 @@ public class GameManager : MonoBehaviour
 Priyanka's To Do's 
 - Make GameManager and ScriptManager Prefabs (maybe 1 prefab w all the managers?)
 - React manager integration
-- Add the actual chopped up ship
-- Port and Starboard highlight only in certain camera angles 
+- Do we want a score thing?
+- Confused animation for skipper
 */
