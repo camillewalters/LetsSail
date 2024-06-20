@@ -16,6 +16,7 @@ public class CameraManager : MonoBehaviour
 
     public CinemachineVirtualCamera startCamera;
     public CinemachineVirtualCamera currentCamera;
+    public Transform endFollowPoint;
 
     void Awake()
     {
@@ -88,5 +89,10 @@ public class CameraManager : MonoBehaviour
                 cam.Priority = 10;
             }
         }
+    }
+
+    public void CurrentCameraFollow()
+    {
+        currentCamera.Follow = endFollowPoint;
     }
 }

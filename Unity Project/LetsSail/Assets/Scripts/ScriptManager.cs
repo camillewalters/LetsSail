@@ -16,7 +16,7 @@ public class ScriptManager : MonoBehaviour
     
     private int currentLineIndex = 0;
 
-    private const string successMessage = "Glad that it's intact";
+    private const string successMessage = "Glad that it's intact.";
     public string SuccessMessage => successMessage;
 
     private bool introComplete = false;
