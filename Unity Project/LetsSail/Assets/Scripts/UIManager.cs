@@ -38,12 +38,6 @@ public class UIManager : MonoBehaviour
         gameManager.ChangeCameraAngle(CameraManager.CameraIndex.Port);
     }
 
-    //Priyanka: gamemanager method would be something like:
-    //ChangeCameraAngle(int index)
-    //{
-    //    CameraManager.ChangeCameraPosition(index);
-    //}
-
     /// <summary>
     /// Change from normal to skipper, or from skipper to normal
     /// </summary>

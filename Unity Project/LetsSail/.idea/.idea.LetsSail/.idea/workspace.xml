@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.data.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.data.unityweb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.framework.js.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.framework.js.unityweb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.wasm.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.wasm.unityweb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.data.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.data.unityweb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.framework.js.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.framework.js.unityweb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.wasm.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.wasm.unityweb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Islands.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Islands.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/4-Materials/ocean.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/4-Materials/ocean.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/ToonFemale/RaceBase/BaseRecipe/BaseOverlays/UMA_Toon_F_Body_Lashes.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/ToonFemale/RaceBase/BaseRecipe/BaseOverlays/UMA_Toon_F_Body_Lashes.asset.meta" afterDir="false" />
@@ -80,10 +90,13 @@
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/BaseRecipe/BaseRecipeTextures/WerewolfTeeth_Normal.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/BaseRecipe/BaseRecipeTextures/WerewolfTeeth_Normal.psd.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/DNA/LegacyDNA/WerewolfSerializedDNAConverterBehaviour Legacy.prefab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/DNA/LegacyDNA/WerewolfSerializedDNAConverterBehaviour Legacy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_57a4cbef-a204-4660-a984-a3081c21b496.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_57a4cbef-a204-4660-a984-a3081c21b496.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1-w-islands.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1-w-islands.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelOneScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelOneScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelThreeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelThreeScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelTwoScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelTwoScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +108,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/testforkari.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@16.0.5/Shaders/Terrain/TerrainLit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -192,6 +206,8 @@
       <workItem from="1718576728706" duration="3256000" />
       <workItem from="1718737966486" duration="228000" />
       <workItem from="1718738412767" duration="599000" />
+      <workItem from="1718867384352" duration="1268000" />
+      <workItem from="1718899525402" duration="5834000" />
     </task>
     <servers />
   </component>

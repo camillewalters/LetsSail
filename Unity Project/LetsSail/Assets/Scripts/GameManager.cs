@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public UIManager uiManager;
     public ScriptManager scriptManager;
+    public ReactManager reactManager;
     public CameraManager cameraManager;
     public Camera brainCamera;
 
@@ -126,8 +127,11 @@ public class GameManager : MonoBehaviour
             uiManager.ToggleCameraButtons(false);
             // uiManager.ToggleScore(false);
             uiManager.DisplayMessage(EndOfDayMessage);
-            // TODO: Tell react manager level is complete
-            uiManager.ChangeContinueButtonTextToEnd();
+            uiManager.ToggleContinueButton(false);
+            
+            // Tell react manager level is complete
+            reactManager.SendLevelCompleteToFrontEnd();
+            
             return; 
         }
         
@@ -239,7 +243,5 @@ public class GameManager : MonoBehaviour
 /*
 Priyanka's To Do's 
 - Make GameManager and ScriptManager Prefabs (maybe 1 prefab w all the managers?)
-- React manager integration
-- Do we want a score thing?
 - Confused animation for skipper
 */

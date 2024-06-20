@@ -1,6 +1,8 @@
 // TBD
 public class LevelTwoScript
 {
+    // The number at the end signifies the Camera Index
+    // "SKIPPER" at the beginning signifies that that line uses Skipper Chat box mode
     public string[] introLines = 
     {
         "A level 2 test.3",
