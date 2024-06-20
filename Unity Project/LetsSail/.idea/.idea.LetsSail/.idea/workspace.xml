@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.data.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.data.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.framework.js.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.framework.js.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.wasm.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/public/Build/Test.wasm.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.data.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.data.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.framework.js.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.framework.js.unityweb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.wasm.unityweb" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/UnityBuilds/Test/Build/Test.wasm.unityweb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Islands.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Islands.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HappyIdle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HappyIdle.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" afterDir="false" />
@@ -92,11 +85,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/DNA/LegacyDNA/WerewolfSerializedDNAConverterBehaviour Legacy.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1-w-islands.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1-w-islands.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelOneScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelOneScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelThreeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelThreeScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelTwoScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Text/LevelTwoScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Skipper.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Skipper.controller.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +197,7 @@
       <workItem from="1718737966486" duration="228000" />
       <workItem from="1718738412767" duration="599000" />
       <workItem from="1718867384352" duration="1268000" />
-      <workItem from="1718899525402" duration="5834000" />
+      <workItem from="1718899525402" duration="7284000" />
     </task>
     <servers />
   </component>

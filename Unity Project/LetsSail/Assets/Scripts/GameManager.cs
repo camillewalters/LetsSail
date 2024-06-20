@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = System.Random;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     public ReactManager reactManager;
     public CameraManager cameraManager;
     public Camera brainCamera;
+    public Animator rioController;
 
     // TODO: is this the best way to do it?
     public List<GameObject> objectsToHighlight;
@@ -65,7 +67,12 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log("success!!");
                     _missCount = 0;
+                    
+                    // Disable outline 
+                    Destroy(objectsToHighlight[_indexList[_taskCount]].GetComponent<Outline>());
+                    Destroy(objectsToHighlight[_indexList[_taskCount]].GetComponent<ChangeOutline>());
                     TaskSuccessfullyCompleted();
+                    
                 }
                 else
                 {
@@ -124,6 +131,9 @@ public class GameManager : MonoBehaviour
         // If Task Phase is completed successfully and we're at the End of Day Phase
         if (_tasksComplete)
         {
+            // Make Rio dance
+            rioController.SetBool("Hint", true);
+
             uiManager.ToggleCameraButtons(false);
             // uiManager.ToggleScore(false);
             uiManager.DisplayMessage(EndOfDayMessage);
@@ -131,7 +141,6 @@ public class GameManager : MonoBehaviour
             
             // Tell react manager level is complete
             reactManager.SendLevelCompleteToFrontEnd();
-            
             return; 
         }
         
