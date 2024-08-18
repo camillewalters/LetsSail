@@ -1,5 +1,7 @@
 public class LevelOneScript
 {
+    // The number at the end signifies the Camera Index
+    // "SKIPPER" at the beginning signifies that that line uses Skipper Chat box mode
     public string[] introLines = 
     {
         "A storm pushed you and your team to this deserted island.3",

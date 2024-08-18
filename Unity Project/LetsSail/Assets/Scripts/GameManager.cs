@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = System.Random;
 
 /*
@@ -22,16 +21,19 @@ public class GameManager : MonoBehaviour
 
     public UIManager uiManager;
     public ScriptManager scriptManager;
+    public ReactManager reactManager;
     public CameraManager cameraManager;
     public Camera brainCamera;
+    public Animator rioController;
+    public GameObject boat;
 
-    // TODO: is this the best way to do it?
     public List<GameObject> objectsToHighlight;
     
     private List<int> _indexList;
     private int _taskCount = 0;
     private bool _tasksComplete = false;
     private int _missCount = 0;
+    private bool makeBoatMove = false;
     
     private void Start()
     {
@@ -64,7 +66,12 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log("success!!");
                     _missCount = 0;
+                    
+                    // Disable outline 
+                    Destroy(objectsToHighlight[_indexList[_taskCount]].GetComponent<Outline>());
+                    Destroy(objectsToHighlight[_indexList[_taskCount]].GetComponent<ChangeOutline>());
                     TaskSuccessfullyCompleted();
+                    
                 }
                 else
                 {
@@ -77,6 +84,12 @@ public class GameManager : MonoBehaviour
             {
                 DisplayHint();
             }
+        }
+        
+        // Make boat move
+        if (makeBoatMove)
+        {
+            boat.transform.position += boat.transform.forward * Time.deltaTime * 8;
         }
     }
 
@@ -123,11 +136,23 @@ public class GameManager : MonoBehaviour
         // If Task Phase is completed successfully and we're at the End of Day Phase
         if (_tasksComplete)
         {
+            // Make Rio dance
+            rioController.SetBool("Hint", true);
+
+            // UI updates
             uiManager.ToggleCameraButtons(false);
-            // uiManager.ToggleScore(false);
             uiManager.DisplayMessage(EndOfDayMessage);
-            // TODO: Tell react manager level is complete
-            uiManager.ChangeContinueButtonTextToEnd();
+            uiManager.ToggleContinueButton(false);
+            
+            // Make boat move
+            // TODO: In the future maybe only at Level 3? 
+            makeBoatMove = true;
+            // make camera follow
+            ChangeCameraAngle(CameraManager.CameraIndex.Port);
+            cameraManager.CurrentCameraFollow();
+            
+            // Tell react manager level is complete
+            reactManager.SendLevelCompleteToFrontEnd();
             return; 
         }
         
@@ -239,7 +264,5 @@ public class GameManager : MonoBehaviour
 /*
 Priyanka's To Do's 
 - Make GameManager and ScriptManager Prefabs (maybe 1 prefab w all the managers?)
-- React manager integration
-- Do we want a score thing?
 - Confused animation for skipper
 */

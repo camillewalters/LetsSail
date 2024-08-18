@@ -18,7 +18,7 @@ public class ChangeOutline : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        _outline.OutlineColor = Color.red;
+        _outline.OutlineColor = Color.blue;
     }
 
     private void OnMouseExit()

@@ -8,10 +8,10 @@ import NavBar from '../Components/NavBar';
 function Level2() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener, requestFullscreen, isLoaded } = useUnityContext({
 
-        loaderUrl: '/Build/SimpleWater.loader.js',
-        dataUrl: '/Build/SimpleWater.data.unityweb',
-        frameworkUrl: '/Build/SimpleWater.framework.js.unityweb',
-        codeUrl: '/Build/SimpleWater.wasm.unityweb',
+        loaderUrl: '/Build/Level2.loader.js',
+        dataUrl: '/Build/Level2.data.unityweb',
+        frameworkUrl: '/Build/Level2.framework.js.unityweb',
+        codeUrl: '/Build/Level2.wasm.unityweb',
     });
 
     const [levelComplete, setLevelComplete] = useState(false);

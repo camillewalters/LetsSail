@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63ad89e2-4b89-46ba-9f5a-eb031f250870" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/LevelPages/Level1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/LevelPages/Level1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../React App/letssail/src/LevelPages/Level2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../React App/letssail/src/LevelPages/Level2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LetsSail/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Custom Assets/FigmaUI/Star.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Custom Assets/FigmaUI/Star.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Custom Assets/FigmaUI/Star_outline.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Custom Assets/FigmaUI/Star_outline.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Custom Assets/Fonts/Manrope-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Custom Assets/Fonts/Manrope-VariableFont_wght SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/SailBoat_Sketchfab/Sailboatnaming.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/Storm-Breakers/2-Prefabs &amp; templates/Ocean.prefab" afterDir="false" />
@@ -84,9 +83,15 @@
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/BaseRecipe/BaseRecipeTextures/WerewolfTeeth_Normal.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/BaseRecipe/BaseRecipeTextures/WerewolfTeeth_Normal.psd.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/DNA/LegacyDNA/WerewolfSerializedDNAConverterBehaviour Legacy.prefab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Licensed Assets/Licensed Assets/UMA/Examples/DynamicCharacterSystem Examples/Assets/DemoAssetBundles/Werewolf/RaceBase/DNA/LegacyDNA/WerewolfSerializedDNAConverterBehaviour Legacy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1-w-islands.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1-w-islands.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Glow Outline/ChangeOutline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Glow Outline/ChangeOutline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +103,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/testforkari.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@16.0.5/Shaders/Terrain/TerrainLit.shader" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -113,11 +123,12 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "priyanka/level1",
+    "git-widget-placeholder": "priyanka/level-1-island",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeInspectionSettingsId",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -128,6 +139,9 @@
     ]
   }
 }]]></component>
+  <component name="RiderProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2023.2.14f1\Editor\Unity.exe" />
@@ -192,6 +206,10 @@
       <workItem from="1718212457358" duration="577000" />
       <workItem from="1718224702766" duration="628000" />
       <workItem from="1718576728706" duration="3256000" />
+      <workItem from="1718737966486" duration="228000" />
+      <workItem from="1718738412767" duration="599000" />
+      <workItem from="1718867384352" duration="1268000" />
+      <workItem from="1718899525402" duration="11603000" />
     </task>
     <servers />
   </component>

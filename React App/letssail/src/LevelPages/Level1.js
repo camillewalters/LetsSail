@@ -12,10 +12,10 @@ import NavBar from '../Components/NavBar';
 function Level1() {
     const { unityProvider, sendMessage, addEventListener, removeEventListener, requestFullscreen, isLoaded } = useUnityContext({
 
-        loaderUrl: '/Build/Test.loader.js',
-        dataUrl: '/Build/Test.data.unityweb',
-        frameworkUrl: '/Build/Test.framework.js.unityweb',
-        codeUrl: '/Build/Test.wasm.unityweb',
+        loaderUrl: '/Build/Level1.loader.js',
+        dataUrl: '/Build/Level1.data.unityweb',
+        frameworkUrl: '/Build/Level1.framework.js.unityweb',
+        codeUrl: '/Build/Level1.wasm.unityweb',
     });
 
     const [levelComplete, setLevelComplete] = useState(false);
