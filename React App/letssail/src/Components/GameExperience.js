@@ -1,6 +1,7 @@
 import { Container, Box, chakra, Text, Icon, SimpleGrid, useColorModeValue, Button, Link, Flex, Stack, Image, Heading } from '@chakra-ui/react';
 import WomanSailing from '../Images/womanSailing.jpg';
 import { MdOutlineFilter1, MdOutlineFilter2, MdOutlineFilter3, MdOutlineFilter4 } from "react-icons/md";
+import letssail from '../Images/letssail.png';
 
 const Experience = () => {
     const headingColor = useColorModeValue("textcolor.100", "teal.200");
@@ -110,7 +111,7 @@ const Experience = () => {
                                 w={'100%'}
                                 h={'100%'}
                                 src={
-                                    WomanSailing
+                                    letssail
                                 }
                             />
                         </Box>
