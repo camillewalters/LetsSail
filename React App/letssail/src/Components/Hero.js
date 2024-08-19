@@ -50,7 +50,7 @@ export default function Hero() {
                         <br />
                     </Heading>
                     <Text color={'gray.500'} fontSize="lg">
-                        LetsSail brings you the confidence on the water by our gamified learning experience. The experience works on any browser, on both desktop and mobile.
+                        Embark on a virtual sailing adventure with LetsSail, the web-based game designed to enhance your sailing skills through interactive learning. The experience works on any browser, on both desktop and mobile.
                     </Text>
                     <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
                         <Button
