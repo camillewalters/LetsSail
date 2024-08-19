@@ -2,7 +2,7 @@ import { Container, Box, chakra, Text, Icon, SimpleGrid, useColorModeValue, Butt
 import { MdEventAvailable, MdAssignment, MdLocalHospital, MdLibraryBooks, MdOutlineSailing } from 'react-icons/md';
 import { GiShieldEchoes, GiBookmarklet } from "react-icons/gi";
 import { FaGamepad } from "react-icons/fa";
-import { FaHandPointer } from "react-icons/fa6";
+import { FaHandPointUp } from "react-icons/fa";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 
 interface IFeature {
@@ -21,7 +21,7 @@ const features: IFeature[] = [
   {
     heading: 'Interactive Learning',
       content: 'Interact with the virtual world and characters. Sustain the memory better.',
-      icon: FaHandPointer,
+      icon: FaHandPointUp,
   },
   {
     heading: 'Risk-free Practice',
