@@ -1,27 +1,31 @@
 import * as React from 'react';
-import { Container, Text, SimpleGrid, Box, chakra, Stack, Flex, Icon, useColorModeValue, Link } from '@chakra-ui/react';
-import { AiFillStar } from 'react-icons/ai';
-import { FaUsers, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
-import { BsPerson } from 'react-icons/bs';
+import {
+    Container, Text, SimpleGrid, Box, chakra, Flex, Icon,
+    useColorModeValue, Link, Grid
+} from '@chakra-ui/react';
 import { RiPagesFill } from "react-icons/ri";
+import { FaLinkedin } from 'react-icons/fa';
 import Camille from '../Images/camille.png';
 import Priyanka from '../Images/priyanka.png';
 import Kari from '../Images/kari.png';
 import Chien from '../Images/chien.png';
 
-
 interface StatData {
     label: string;
     score: string;
     icon: React.ReactElement;
-
+    link: {
+        href: string;
+        title: string;
+        icon: any;
+    };
 }
 
 const statData: StatData[] = [
     {
-        label: 'Product Manager / Designer/ Game Writer',
+        label: 'Product Manager / Designer / Game Writer',
         score: 'Kari Wu',
-        icon: <img src={Kari} alt="Kari Headshot" />,
+        icon: <img src={Kari} alt="Kari Headshot" style={{ width: '100%', height: 'auto', maxWidth: '120px', maxHeight: '160px' }} />,
         link: {
             href: 'https://www.kariwu.com/',
             title: 'Kari website',
@@ -31,7 +35,7 @@ const statData: StatData[] = [
     {
         label: 'Unity Engineer',
         score: 'Priyanka Chandrashekar',
-        icon: <img src={Priyanka} alt="Priyanka Headshot" />,
+        icon: <img src={Priyanka} alt="Priyanka Headshot" style={{ width: '100%', height: 'auto', maxWidth: '130px', maxHeight: '160px' }} />,
         link: {
             href: 'https://www.linkedin.com/in/priyanka1706/',
             title: 'Priyanka linkedin',
@@ -39,9 +43,9 @@ const statData: StatData[] = [
         }
     },
     {
-        label: 'Unity / Fullstack Engineer' ,
+        label: 'Unity / Fullstack Engineer',
         score: 'Camille Walters',
-        icon: <img src={Camille} alt="Camille Headshot" />,
+        icon: <img src={Camille} alt="Camille Headshot" style={{ width: '100%', height: 'auto', maxWidth: '130px', maxHeight: '160px' }} />,
         link: {
             href: 'https://camillewalters.ca/',
             title: 'Camille Website',
@@ -49,16 +53,15 @@ const statData: StatData[] = [
         }
     },
     {
-        label: '3D Artist' ,
+        label: '3D Artist',
         score: 'Chien Jarvis',
-        icon: <img src={Chien} alt="Chien Headshot" />,
+        icon: <img src={Chien} alt="Chien Headshot" style={{ width: '100%', height: 'auto', maxWidth: '130px', maxHeight: '160px' }} />,
         link: {
             href: 'https://www.linkedin.com/in/chienjarvis/',
             title: 'Chien Linkedin',
             icon: FaLinkedin,
         }
     },
-
 ];
 
 const Team = () => {
@@ -66,53 +69,55 @@ const Team = () => {
     const tealColor = useColorModeValue("teal.600", "teal.500");
 
     return (
-        <Container maxW="5xl" p={{ base: 4, sm: 10 }}>
+        <Container maxW="6.5xl" p={{ base: 4, sm: 5 }}>
             <Flex direction={{ base: 'column', md: 'row' }} justify="space-between">
-                <Stack spacing={1}>
-                    <chakra.h1
-                        fontSize="5xl"
-                        lineHeight={1.2}
-                        fontWeight="bold"
-                        color={"textcolor.100"}
-                    >
-                        Our Team
-                    </chakra.h1>
-                    <Text fontSize="md" color={"textcolor.400"} maxW="400px">
-                        We collaborated closely at every stage while taking ownership of our respective areas. If you have any feedback or are interested in collaborating, please feel free to reach out to us on LinkedIn.
-                    </Text>
-                </Stack>
-                <SimpleGrid columns={4} spacing={4} pt={8} pl={{ base: 0, md: 10 }}>
+                <chakra.h1
+                    fontSize="5xl"
+                    lineHeight={1.2}
+                    fontWeight="bold"
+                    color={textColor}
+                    mb={{ base: 0, md: 8 }}
+                >
+                    Our Team
+                </chakra.h1>
+                <Text fontSize="md" color={textColor} maxW="200px" mb={10} p="4">
+                    We collaborated closely at every stage while taking ownership of our respective areas. If you have any feedback or are interested in collaborating, please feel free to reach out to us on LinkedIn.
+                </Text>
+                <SimpleGrid columns={4} spacing={3}>
                     {statData.map((data, index) => (
-                        <Stack
+                        <Grid
                             key={index}
-                            p={4}
+                            p={3}
                             border="1px solid"
                             borderColor={"#ffffff"}
                             borderRadius="md"
-                            align="center"
-                            spacing={1}
                             bg={"#FAFAFB"}
+                            templateRows="repeat(4, auto)"
+                            gap={2}
+                            justifyItems="center"
+                            alignItems="center"  
                         >
-                            <Box fontSize="lg" color={tealColor}>
+                            <Box gridRow={1} width="180px" height="160px" overflow="hidden" display="flex" alignItems="center" justifyContent="center">
                                 {data.icon}
                             </Box>
-                            <Box fontSize="2xl" fontWeight="bold" color={textColor} align="center">
-                                {data.score}
-                            </Box>
-                            
-                            <Text fontSize="md" color={"custom.200"} align="center">
+                            <Text
+                                fontSize="2xl"
+                                fontWeight="bold"
+                                color={textColor}
+                                gridRow={2}
+                                textAlign="center"
+                            >
+                                {data.score.split(' ').map((part, i) => (
+                                    <div key={i}>{part}</div>
+                                ))}
+                            </Text>
+                            <Text fontSize="md" color={tealColor} gridRow={3} textAlign="center">
                                 {data.label}
                             </Text>
-                            <Stack fontSize="lg" color={tealColor}>
-                            <Link
-              href={data.link.href}
-              key={data.link.title}
-              color={'gray.700'}
-            >
-              <Icon as={data.link.icon} boxSize={6} />
-            </Link>
-                            </Stack>
-                        </Stack>
+                            <Link href={data.link.href} color={tealColor} gridRow={4}>
+                                <Icon as={data.link.icon} boxSize={6} />
+                            </Link>
+                        </Grid>
                     ))}
                 </SimpleGrid>
             </Flex>
