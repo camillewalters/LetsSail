@@ -69,7 +69,7 @@ const Team = () => {
     const tealColor = useColorModeValue("teal.600", "teal.500");
 
     return (
-        <Container maxW="6.5xl" p={{ base: 4, sm: 5 }}>
+        <Container maxW="6.5xl" p={{ base: 2, sm: 4 }}>
             <Flex direction={{ base: 'column', md: 'row' }} justify="space-between">
                 <chakra.h1
                     fontSize="5xl"
