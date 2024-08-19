@@ -2,7 +2,7 @@ import { Container, Box, chakra, Text, Icon, SimpleGrid, useColorModeValue, Butt
 import { MdEventAvailable, MdAssignment, MdLocalHospital, MdLibraryBooks, MdOutlineSailing } from 'react-icons/md';
 import { GiShieldEchoes, GiBookmarklet } from "react-icons/gi";
 import { FaGamepad } from "react-icons/fa";
-import { FaRegHandPointer } from "react-icons/fa6";
+import { FaHandPointUp } from "react-icons/fa6";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 
 const Contact = () => {
@@ -11,10 +11,23 @@ const Contact = () => {
     const iconColor = useColorModeValue("custom.200", "teal.400");
     const titleSize = "5xl";
     const contentSize = "md";
+    const tealColor = useColorModeValue("teal.600", "teal.500");
 
     return (
         <Box py={{ base: 8, md: 16 }}>
-            <Container maxW="6xl" p={{ base: 5, md: 10 }} justify="center">                
+            <Container maxW="6xl" p={{ base: 5, md: 5 }} justify="center">
+                <chakra.h1 fontSize={titleSize} fontWeight="bold" mb={3} textAlign="center" color={headingColor}>
+                    Special Thanks
+                </chakra.h1>
+                <chakra.p fontSize="lg" color={"textcolor.400"} mb={8} textAlign="left">
+                    We also want to give our special thanks to many other people who helped us with this project, including: 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/serhii-kyryliuk' isExternal> Serhii Kyryliuk</Link>, 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/brandonwan/' isExternal> Brandon Wan</Link>, 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/jessica-tc-lee/' isExternal> Jessica Lee</Link>, 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/shih-tsui-ariel-kuo-34721393/' isExternal> Ariel Kuo</Link>, and 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/doug-bruvall-8a75912a9/' isExternal> Doug Bruvall</Link>.
+                </chakra.p>
+
                 <chakra.h1 fontSize={titleSize} fontWeight="bold" mb={3} textAlign="center" color={headingColor}>
                     Check out our work
                 </chakra.h1>
@@ -31,7 +44,7 @@ const Contact = () => {
                         bg={'custom.100'}
                         _hover={{ bg: 'custom.300' }}
                     >
-                        <Link href='https://github.com/camillewalters/LetsSail' >
+                        <Link href='https://github.com/camillewalters/LetsSail' isExternal>
                             LetsSail Github
                         </Link>
                     </Button>
@@ -42,4 +55,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
