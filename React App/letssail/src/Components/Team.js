@@ -19,7 +19,7 @@ interface StatData {
 
 const statData: StatData[] = [
     {
-        label: 'Product Manager / Designer/ 3D Artist',
+        label: 'Product Manager / Designer/ Game Writer',
         score: 'Kari Wu',
         icon: <img src={Kari} alt="Kari Headshot" />,
         link: {
@@ -81,7 +81,7 @@ const Team = () => {
                         We collaborated closely at every stage while taking ownership of our respective areas. If you have any feedback or are interested in collaborating, please feel free to reach out to us on LinkedIn.
                     </Text>
                 </Stack>
-                <SimpleGrid columns={3} spacing={6} pt={8} pl={{ base: 0, md: 10 }}>
+                <SimpleGrid columns={4} spacing={4} pt={8} pl={{ base: 0, md: 10 }}>
                     {statData.map((data, index) => (
                         <Stack
                             key={index}
