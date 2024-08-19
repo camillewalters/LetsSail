@@ -7,6 +7,7 @@ import { RiPagesFill } from "react-icons/ri";
 import Camille from '../Images/camille.png';
 import Priyanka from '../Images/priyanka.png';
 import Kari from '../Images/kari.png';
+import Chien from '../Images/chien.png';
 
 
 interface StatData {
@@ -47,6 +48,17 @@ const statData: StatData[] = [
             icon: RiPagesFill,
         }
     },
+    {
+        label: '3D Artist' ,
+        score: 'Chien Jarvis',
+        icon: <img src={Chien} alt="Chien Headshot" />,
+        link: {
+            href: 'https://www.linkedin.com/in/chienjarvis/',
+            title: 'Chien Linkedin',
+            icon: FaLinkedin,
+        }
+    },
+
 ];
 
 const Team = () => {
