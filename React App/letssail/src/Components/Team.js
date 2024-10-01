@@ -80,10 +80,10 @@ const Team = () => {
                 >
                     Our Team
                 </chakra.h1>
-                <Text fontSize="md" color={textColor} maxW="200px" mb={10} p="4">
+                <Text fontSize={{ base: "sm", md: "md" }} color={textColor} maxW={{ base: "100%", md: "200px" }} mb={10} p="4">
                     We collaborated closely at every stage while taking ownership of our respective areas. If you have any feedback or are interested in collaborating, please feel free to reach out to us on LinkedIn.
                 </Text>
-                <SimpleGrid columns={4} spacing={3}>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={3}>
                     {statData.map((data, index) => (
                         <Grid
                             key={index}
@@ -97,11 +97,11 @@ const Team = () => {
                             justifyItems="center"
                             alignItems="center"  
                         >
-                            <Box gridRow={1} width="180px" height="160px" overflow="hidden" display="flex" alignItems="center" justifyContent="center">
+                            <Box gridRow={1} width={{ base: "120px", md: "180px" }} height={{ base: "120px", md: "160px" }} overflow="hidden" display="flex" alignItems="center" justifyContent="center">
                                 {data.icon}
                             </Box>
                             <Text
-                                fontSize="2xl"
+                                fontSize={{ base: "xl", md: "2xl" }}
                                 fontWeight="bold"
                                 color={textColor}
                                 gridRow={2}
@@ -115,7 +115,7 @@ const Team = () => {
                                 {data.label}
                             </Text>
                             <Link href={data.link.href} color={tealColor} gridRow={4}>
-                                <Icon as={data.link.icon} boxSize={6} />
+                                <Icon as={data.link.icon} boxSize={{ base: 4, md: 6 }} />
                             </Link>
                         </Grid>
                     ))}
@@ -126,4 +126,3 @@ const Team = () => {
 };
 
 export default Team;
-
