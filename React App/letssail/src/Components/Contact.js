@@ -21,11 +21,11 @@ const Contact = () => {
                 </chakra.h1>
                 <chakra.p fontSize="lg" color={"textcolor.400"} mb={8} textAlign="left">
                     We also want to give our special thanks to many other people who helped us with this project, including: 
-                    <Link color={tealColor} href='https://www.linkedin.com/in/serhii-kyryliuk' isExternal> Serhii Kyryliuk</Link>, 
-                    <Link color={tealColor} href='https://www.linkedin.com/in/brandonwan/' isExternal> Brandon Wan</Link>, 
-                    <Link color={tealColor} href='https://www.linkedin.com/in/jessica-tc-lee/' isExternal> Jessica Lee</Link>, 
-                    <Link color={tealColor} href='https://www.linkedin.com/in/shih-tsui-ariel-kuo-34721393/' isExternal> Ariel Kuo</Link>, and 
-                    <Link color={tealColor} href='https://www.linkedin.com/in/doug-bruvall-8a75912a9/' isExternal> Doug Bruvall</Link>.
+                    <Link color={tealColor} href='https://www.linkedin.com/in/brandonwan/' isExternal> Brandon Wan</Link> (Subject Matter Expert), 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/jessica-tc-lee/' isExternal> Jessica Lee</Link> (Product Designer), 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/serhii-kyryliuk' isExternal> Serhii Kyryliuk</Link> (Product Designer), 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/shih-tsui-ariel-kuo-34721393/' isExternal> Ariel Kuo</Link> (Engineer and 3D Artist), and 
+                    <Link color={tealColor} href='https://www.linkedin.com/in/doug-bruvall-8a75912a9/' isExternal> Doug Bruvall</Link> (Engineer).
                 </chakra.p>
 
                 <chakra.h1 fontSize={titleSize} fontWeight="bold" mb={3} textAlign="center" color={headingColor}>
